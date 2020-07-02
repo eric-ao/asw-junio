@@ -100,7 +100,7 @@ export class MapComponent extends Component {
             const doc = SolidAuth.fetch(new URL('rutaEjemplo.json', this.state.url));
 
             doc.then(async response => {
-                if (response.status == 200) {
+                if (response.status === 200) {
                     const json = await response.text();
 
                     const jsonParse = JSON.parse(json);
@@ -125,7 +125,7 @@ export class MapComponent extends Component {
     
                     }
 
-                } else if (response.status == 404) {
+                } else if (response.status === 404) {
                     console.log("Documento no encontrado");
                     this.setState(prevState => ({
                         ...prevState,
@@ -313,7 +313,7 @@ export class MapComponent extends Component {
                             <React.Fragment key={`route_${i}`}>
                                
                                 <dt>
-                                    <a class = "anombre" href="#" onClick={(e) => {
+                                    <a class = "anombre" href="/#" onClick={(e) => {
                                         e.preventDefault();
                                         this.setState((prevState) => ({
                                             ...prevState,
@@ -388,7 +388,7 @@ export class MapComponent extends Component {
                                 <h1>Imágenes</h1>
                                 {
                                     this.state.selectedPoint && this.state.selectedPoint.images && this.state.selectedPoint.images.map((image, j) => (
-                                        <img key={`img_${j}`} src={new URL(image, this.state.url)} />
+                                        <img key={`img_${j}`} src={new URL(image, this.state.url)} alt="" />
                                     ))
                                 }
                             </div>

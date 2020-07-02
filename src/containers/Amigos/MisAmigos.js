@@ -45,7 +45,7 @@ class MisAmigosComponent extends Component {
           const doc = SolidAuth.fetch(new URL('rutaEjemplo.json', this.state.url));
 
           doc.then(async response => {
-              if (response.status == 200) {
+              if (response.status === 200) {
                   const json = await response.text();
 
                   const jsonParse = JSON.parse(json);
@@ -70,7 +70,7 @@ class MisAmigosComponent extends Component {
   
                   }
 
-              } else if (response.status == 404) {
+              } else if (response.status === 404) {
                   console.log("Documento no encontrado");
                   this.setState(prevState => ({
                       ...prevState,
@@ -91,7 +91,7 @@ class MisAmigosComponent extends Component {
   async compartir(url) {
     if (this.state.selectedRoute) {
       url = url.replace('/profile/card#me', '');
-      const result = await SolidAuth.fetch(new URL('inbox', url), {
+      await SolidAuth.fetch(new URL('inbox', url), {
         method: "POST",
         body: JSON.stringify(this.state.selectedRoute),
         headers: {
@@ -122,7 +122,7 @@ class MisAmigosComponent extends Component {
                           <React.Fragment key={`route_${i}`}>
                              
                               <dt>
-                                  <a href="#" style={{fontWeight: this.state.selectedRoute == route ? 'bold': 'normal'}} onClick={(e) => {
+                                  <a href="/#" style={{fontWeight: this.state.selectedRoute === route ? 'bold': 'normal'}} onClick={(e) => {
                                       e.preventDefault();
                                       this.setState((prevState) => ({
                                           ...prevState,
@@ -155,7 +155,7 @@ class MisAmigosComponent extends Component {
               this.state.selectedRoute && (
             <ul style={{listStyle: 'circle', paddingLeft: '40px'}}>
               <li>
-              <a href="#" onClick={(e) => {
+              <a href="/#" onClick={(e) => {
               e.preventDefault();
               this.compartir(friend.toString());
             }}> 

@@ -48,11 +48,11 @@ class FileUploader extends React.Component {
     }
      
     onFileChange(e, file) {
-        var file = file || e.target.files[0],
+        var lfile = file || e.target.files[0],
             pattern = /image-*/,
             reader = new FileReader();
              
-        if (!file.type.match(pattern)) {
+        if (!lfile.type.match(pattern)) {
             alert('Formato inválido');
             return;
         }
@@ -66,7 +66,7 @@ class FileUploader extends React.Component {
             }); 
         }
          
-        reader.readAsDataURL(file);
+        reader.readAsDataURL(lfile);
     }
      
     getFileObject() {
@@ -97,7 +97,7 @@ class FileUploader extends React.Component {
                 onDrop={this.onDrop}
                 style={{outlineColor: borderColor}}>
                  
-                <img src={state.imageSrc} className={state.loaded && 'loaded'}/>
+                <img src={state.imageSrc} className={state.loaded && 'loaded'} alt=""/>
                 <i className="icon icon-upload"
                     style={{ color: iconColor }}></i>
                 <input type="file" accept="image/*" onChange={this.onFileChange} ref="input" />

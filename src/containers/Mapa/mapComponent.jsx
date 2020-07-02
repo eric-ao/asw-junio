@@ -65,30 +65,30 @@ export class MapComponent extends Component {
                 ...prevState,
                 loadCompartidas: true
             }))
-            var url = this.state.url.toString().replace('/share','');
+            var url = this.state.url.toString().replace('/asw', '');
             const response = await SolidAuth.fetch(new URL('inbox', url));
             console.log('COMPARTIDAS');
             if (response.ok) {
                 const text = await response.text();
                 console.log(text);
-                const notificaciones = text.match(/<.*>\n/g).map(n => n.replace(/[<>\n]/g,''));
-                console.log(notificaciones);
-                notificaciones.forEach(async n => {
-                    const response = await SolidAuth.fetch(new URL('inbox/'+n, url));
-                    const json = await response.json();
-                    this.setState(prevState => ({
-                        ...prevState,
-                        rutasCompartidas: [
-                            ...prevState.rutasCompartidas,
-                            json
-                        ]
-                    }))
-                    console.log('RUTA ' + n);
-                    console.log(json);
-                })
-            }
-            else {
-                console.log(response);
+                let aux = text.match(/<.*>\n/g);
+                if (aux !== null) {
+                    const notificaciones = text.match(/<.*>\n/g).map(n => n.replace(/[<>\n]/g, ''));
+                    console.log(notificaciones);
+                    for (const n of notificaciones) {
+                        const response = await SolidAuth.fetch(new URL('inbox/' + n, url));
+                        const json = await response.json();
+                        this.setState(prevState => ({
+                            ...prevState,
+                            rutasCompartidas: [
+                                ...prevState.rutasCompartidas,
+                                json
+                            ]
+                        }));
+                        console.log('RUTA ' + n);
+                        console.log(json);
+                    }
+                }
             }
         }
     }
@@ -96,7 +96,7 @@ export class MapComponent extends Component {
 
     componentDidUpdate(prevProps) {
         //RECUPERA LA RUTAS COMPARTIDAS.
-        //this.recuperarRutasCompartidas();
+        this.recuperarRutasCompartidas();
 
         //RECUPERA MIS RUTAS.
         if (this.state.url && !this.state.load) {
@@ -117,13 +117,13 @@ export class MapComponent extends Component {
                                 })
                             )
                         }));
-    
+
                         this.setState(prevState => ({
                             ...prevState,
                             load: true,
                             rutas: lista
                         }));
-    
+
                     }
 
                 } else if (response.status === 404) {
@@ -241,26 +241,6 @@ export class MapComponent extends Component {
         })
     }
 
-
-    async compartir(url) {
-        if (this.state.selectedRoute) {
-            url = url.replace('/profile/card#me', '');
-            await SolidAuth.fetch(new URL('inbox', url), {
-                method: "POST",
-                body: JSON.stringify(this.state.selectedRoute),
-                headers: {
-                    Accept: "application/json"
-                }
-            });
-            alert('Ruta compartida');
-        }
-        else {
-            alert('Selecciona una ruta primero');
-        }
-
-    }
-
-
     render() {
         let estiloCustom = [{
                 featureType: "poi",
@@ -332,7 +312,7 @@ export class MapComponent extends Component {
                     {/* MUESTRA LAS RUTAS A LA DERECHA */}
                     <dl>
                         {
-                            [...this.state.rutas.slice(0, -1)].map((route, i) => (
+                            [...this.state.rutas.slice(0, -1), ...this.state.rutasCompartidas].map((route, i) => (
                                 <React.Fragment key={`route_${i}`}>
                                     <dt>
                                         <a href="/#" onClick={(e) => {

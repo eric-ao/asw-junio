@@ -29,7 +29,7 @@ class MisAmigosComponent extends Component {
           const storageRoot = await ldflex[this.props.webId]["pim:storage"];
           if (storageRoot) {
               const exampleUrl = new URL(
-                  "/share/",
+                  "/asw/rutas",
                   storageRoot.value
               );
               this.setState(prevState => ({
@@ -42,7 +42,7 @@ class MisAmigosComponent extends Component {
 
     componentDidUpdate(prevProps) {
       if (this.state.url && !this.state.load) {
-          const doc = SolidAuth.fetch(new URL('rutaEjemplo.json', this.state.url));
+          const doc = SolidAuth.fetch(new URL('rutas.json', this.state.url));
 
           doc.then(async response => {
               if (response.status === 200) {
@@ -55,21 +55,18 @@ class MisAmigosComponent extends Component {
                           ...ruta,
                           locations: ruta.locations.map(
                               eleinterno => ({
-                                  lat: eleinterno["schema:latitude"],
-                                  lng: eleinterno["schema:longitude"],
-                                  images: eleinterno["viade:images"]
+                                  lat: eleinterno["latitud"],
+                                  lng: eleinterno["longitud"],
+                                  images: eleinterno["archivos"]
                               })
                           )
                       }));
-  
                       this.setState(prevState => ({
                           ...prevState,
                           load: true,
                           rutas: lista
                       }));
-  
                   }
-
               } else if (response.status === 404) {
                   console.log("Documento no encontrado");
                   this.setState(prevState => ({
@@ -88,20 +85,38 @@ class MisAmigosComponent extends Component {
       console.log(this.state.locations);
   }
 
+    async compartir(url) {
+        if (this.state.selectedRoute) {
+            url = url.replace('/profile/card#me', '');
+            await SolidAuth.fetch(new URL('inbox', url), {
+                method: "POST",
+                body: JSON.stringify(this.state.selectedRoute),
+                headers: {
+                    Accept: "application/json"
+                }
+            });
+            alert('Ruta compartida');
+        }
+        else {
+            alert('Selecciona una ruta primero');
+        }
+
+    }
+
     render() {
         return (
 
     <div className="app">
         <h1 class="friends">Mis Amigos</h1>
-          <p>Amigos de <div class="usuario"> <Value src="user.name"/> </div>.</p>
+          <p>Amigos de <div> <Value src="user.name"/> </div>.</p>
           <div>
           <dl>
-                  
+
                   {
-                     
+
                       this.state.rutas.map((route,i) => (
                           <React.Fragment key={`route_${i}`}>
-                             
+
                               <dt>
                                   <a href="/#" style={{fontWeight: this.state.selectedRoute === route ? 'bold': 'normal'}} onClick={(e) => {
                                       e.preventDefault();
@@ -114,23 +129,23 @@ class MisAmigosComponent extends Component {
                                   </a>
                               </dt>
                               <dd style={{color: 'black'}} >{route.descripcion}</dd>
-                              
+
                           </React.Fragment>
                       )).slice(0,-1)
-                      
+
                   }
-                 
+
               </dl>
 
           </div>
           <div class="amigos">
 
 
-          <List src="user.friends">{friend =>    
+          <List src="user.friends">{friend =>
                  
-            <li  key={friend}> 
-            <a href={friend}> + 
-            <Value  src={friend} /> 
+            <li  key={friend}>
+            <a href={friend}> +
+            <Value  src={friend} />
             </a>
             {
               this.state.selectedRoute && (
@@ -139,20 +154,20 @@ class MisAmigosComponent extends Component {
               <a href="/#" onClick={(e) => {
               e.preventDefault();
               this.compartir(friend.toString());
-            }}> 
+            }}>
               Compartir {this.state.selectedRoute.nombre} con este usuario
             </a>
 
               </li>
             </ul>)
             }
-            
+
             </li>
-                   
+
           }
           </List>
           </div>
-            
+
     </div>
         );
     }

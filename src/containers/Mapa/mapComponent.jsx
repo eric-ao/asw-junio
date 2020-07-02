@@ -36,6 +36,7 @@ export class MapComponent extends Component {
         this.updateLocations = this.updateLocations.bind(this);
         this.handleClear = this.handleClear.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
+        this.deletePoint = this.deletePoint.bind(this);
     }
 
     async setUrlFromStorage() {
@@ -196,6 +197,17 @@ export class MapComponent extends Component {
         await this.updateLocations(rutas);
     }
 
+    //BORRA EL ÚLTIMO PUNTO MARCADO (antes de guardar).
+    async deletePoint() {
+        this.setState(prevState => {
+            this.getLastRoute(prevState).locations.pop();
+            this.updateLocations(prevState.rutas);
+            return {
+                ...prevState
+            };
+        });
+    }
+
     //Añadir los marcadores
     handleMapClick = (ref, map, ev) => {
         const location = ev.latLng;
@@ -297,6 +309,7 @@ export class MapComponent extends Component {
                                     <button onClick={this.handleSave} className="btn btn-secondary"> Guardar ruta </button>
                                     <button onClick={this.handleClear} className="btn btn-secondary"> Borrar todas mis rutas</button>
                                     <button onClick={this.handleDelete} className="btn btn-secondary"> Borrar ruta</button>
+                                    <button onClick={this.deletePoint} className="btn btn-secondary"> Borrar último punto</button>
                                     <span>
                             </span>
                                 {

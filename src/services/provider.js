@@ -23,7 +23,7 @@ type ProviderEntity = {
         {
           id: 'solid-community',
           label: 'Solid Community',
-          image: '/viade_es4b/img/Solid.png',
+          image: '/img/Solid.png',
           value: 'https://solid.community',
           registerLink: 'https://solid.community/register',
           description: 'Lorem ipsum dolor sit non consectetur'

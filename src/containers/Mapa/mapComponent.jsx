@@ -8,7 +8,6 @@ import ldflex from "@solid/query-ldflex";
 import { Map, GoogleApiWrapper, Marker, Polyline, InfoWindow } from "google-maps-react";
 import ImageComponent from '../Imagen/imagen.component';
 
-
 export class MapComponent extends Component {
     constructor(props) {
         super(props);
@@ -36,19 +35,20 @@ export class MapComponent extends Component {
         this.handleSave = this.handleSave.bind(this);
         this.updateLocations = this.updateLocations.bind(this);
         this.handleClear = this.handleClear.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
     async setUrlFromStorage() {
         if (this.props.webId && !this.state.url) {
             const storageRoot = await ldflex[this.props.webId]["pim:storage"];
             if (storageRoot) {
-                const exampleUrl = new URL(
-                    "/share/",
+                const urlRutas = new URL(
+                    "/asw/rutas",
                     storageRoot.value
                 );
                 this.setState(prevState => ({
                     ...prevState,
-                    url: exampleUrl
+                    url: urlRutas
                 }));
             }
         }
@@ -93,16 +93,17 @@ export class MapComponent extends Component {
         }
     }
 
+
     componentDidUpdate(prevProps) {
-        this.recuperarRutasCompartidas();
+        //RECUPERA LA RUTAS COMPARTIDAS.
+        //this.recuperarRutasCompartidas();
+
+        //RECUPERA MIS RUTAS.
         if (this.state.url && !this.state.load) {
-
-            const doc = SolidAuth.fetch(new URL('rutaEjemplo.json', this.state.url));
-
+            const doc = SolidAuth.fetch(new URL('rutas.json', this.state.url));
             doc.then(async response => {
                 if (response.status === 200) {
                     const json = await response.text();
-
                     const jsonParse = JSON.parse(json);
 
                     if (jsonParse.rutas) {
@@ -110,9 +111,9 @@ export class MapComponent extends Component {
                             ...ruta,
                             locations: ruta.locations.map(
                                 eleinterno => ({
-                                    lat: eleinterno["schema:latitude"],
-                                    lng: eleinterno["schema:longitude"],
-                                    images: eleinterno["viade:images"]
+                                    lat: eleinterno["latitud"],
+                                    lng: eleinterno["longitud"],
+                                    images: eleinterno["archivos"]
                                 })
                             )
                         }));
@@ -145,20 +146,20 @@ export class MapComponent extends Component {
 
     // Guarda los puntos en el POD
     async updateLocations(rutas) {
-        const result = await SolidAuth.fetch(new URL('rutaEjemplo.json', this.state.url), {
+        await SolidAuth.fetch(new URL('rutas.json', this.state.url), {
             method: "PUT",
             body: JSON.stringify(jsonTojsonLD(rutas, this.state.url)),
             headers: {
                 Accept: "application/ld+json"
             }
         });
-        console.log(result);
         this.setState(prevState => ({
             ...prevState,
             rutas: rutas
         }));
     }
 
+    //BORRA TODAS LAS RUTAS DEL USUARIO.
     async handleClear() {
         await this.updateLocations([{
             locations: [],
@@ -167,7 +168,25 @@ export class MapComponent extends Component {
         }]);
     }
 
-    //Se ejecuta al darle al botón "Guardar ruta"
+    //BORRA LA RUTA SELECCIONADA.
+    async handleDelete() {
+        let rutas;
+        this.setState(prevState => {
+            let aux = prevState.rutas;
+            prevState.rutas = [];
+            for(let i=0; i<aux.length; i++) {
+                if(this.state.selectedRoute !== aux[i])
+                    prevState.rutas.push(aux[i])
+            }
+            rutas = prevState.rutas;
+            this.updateLocations(rutas);
+            return {
+                ...prevState
+            };
+        });
+    }
+
+    //SE EJECUTA AL DARLE AL BOTON DE GUARDAR RUTA.
     async handleSave() {
         let rutas = [...this.state.rutas, {
             locations: [],
@@ -223,25 +242,23 @@ export class MapComponent extends Component {
     }
 
     render() {
-        console.log(this.state.rutas);
-
         let estiloCustom = [{
                 featureType: "poi",
                 elementType: "all",
                 stylers: [
                     {visibility: "off"}
                 ],
-            }, {
+                }, {
                 featureType: "water",
                 elementType: "all",
                 stylers: [
                     {"saturation": "100"},
                     {"lightness": "-6"}],
-        },];
+                },];
 
     return (
             <div className="map-container">
-                <div class="rutas">
+                <div>
                     <div>{
                         this.state.url ? <>
                                 <form>
@@ -278,7 +295,8 @@ export class MapComponent extends Component {
                                         </label>
                                     </form>
                                     <button onClick={this.handleSave} className="btn btn-secondary"> Guardar ruta </button>
-                                    <button onClick={this.handleClear} className="btn btn-secondary"> Borrar rutas almacenadas </button>
+                                    <button onClick={this.handleClear} className="btn btn-secondary"> Borrar todas mis rutas</button>
+                                    <button onClick={this.handleDelete} className="btn btn-secondary"> Borrar ruta</button>
                                     <span>
                             </span>
                                 {
@@ -376,7 +394,7 @@ export class MapComponent extends Component {
 }
 
 export default GoogleApiWrapper({
-    //API DE PAGO
+    //API DEVELOPER
     apiKey: "AIzaSyBzv5Utxl-rBk_OW8Jnkooi3FNkL1jGSXM"
     //API GRATUITA
     //apiKey: "AIzaSyDwZUjR7_j6100CdDHxmCvi_Hi7Z681wS8"

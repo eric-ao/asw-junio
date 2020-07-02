@@ -15,11 +15,11 @@ export default function jsonTojsonLD(rutasSC, userName) {
     const nombreDeUsuarioDividido = userNameAUX.split("/");
     const autor = nombreDeUsuarioDividido[0] + "//" + nombreDeUsuarioDividido[2] + "/profile/carde#me";
     //Obtiene la fecha
-    const fecha = new Date().toDateString();
+    const fecha = new Date();
 
     return {
         author: autor,
-        date: fecha,
+        lastModified: fecha.toDateString(),
         rutas: ruta
     };
 }

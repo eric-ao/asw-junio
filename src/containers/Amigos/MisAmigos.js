@@ -88,25 +88,6 @@ class MisAmigosComponent extends Component {
       console.log(this.state.locations);
   }
 
-  async compartir(url) {
-    if (this.state.selectedRoute) {
-      url = url.replace('/profile/card#me', '');
-      await SolidAuth.fetch(new URL('inbox', url), {
-        method: "POST",
-        body: JSON.stringify(this.state.selectedRoute),
-        headers: {
-            Accept: "application/json"
-        }
-      });
-      alert('Ruta compartida');
-    }
-    else {
-      alert('Selecciona una ruta primero');
-    }
-
-  }
-
-
     render() {
         return (
 

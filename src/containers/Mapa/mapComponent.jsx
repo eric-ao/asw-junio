@@ -167,9 +167,9 @@ export class MapComponent extends Component {
         }]);
     }
 
+    //Se ejecuta al darle al botón "Guardar ruta"
     async handleSave() {
-
-        var rutas = [...this.state.rutas, {
+        let rutas = [...this.state.rutas, {
             locations: [],
             nombre: '',
             descripcion: ''
@@ -206,19 +206,12 @@ export class MapComponent extends Component {
         return prevState.rutas[prevState.rutas.length - 1];
     }
 
-    getLastPoint(state = undefined) {
-        var lastRoute = this.getLastRoute(state);
-        var lastPoint = lastRoute.locations[lastRoute.locations.length - 1];
-        return lastPoint;
-    }
-
-    addImageToLastPoint(image) {
+    addImageToSelectedPoint(image) {
         this.setState(prevState => {
-            var lastPoint = this.getLastPoint();
-            if (lastPoint) {
-                lastPoint.images = lastPoint.images ? lastPoint.images : [];
-                lastPoint.images.push(image);
-                console.log(lastPoint);
+            let selectedPoint = this.state.selectedPoint;
+            if (selectedPoint) {
+                selectedPoint.images = selectedPoint.images ? selectedPoint.images : [];
+                selectedPoint.images.push(image);
                 return {
                     ...prevState
                 };
@@ -231,171 +224,151 @@ export class MapComponent extends Component {
 
     render() {
         console.log(this.state.rutas);
-        return (
+
+        let estiloCustom = [{
+                featureType: "poi",
+                elementType: "all",
+                stylers: [
+                    {visibility: "off"}
+                ],
+            }, {
+                featureType: "water",
+                elementType: "all",
+                stylers: [
+                    {"saturation": "100"},
+                    {"lightness": "-6"}],
+        },];
+
+    return (
             <div className="map-container">
-                <span>
-                    <p></p>
-                </span>
-<div class = "rutas">
-                
-                <div>
-                {
-                    this.state.url ?
-                        <>
-                            
-                            <form>
-                                <label class = "nombre">
-                                     Nombre:
-                                     <input type="text" value={this.getLastRoute().nombre} onChange={(e) => {
-                                         var value = e.target.value;
-                                         this.setState(prevState => {
-                                            var lastRoute = this.getLastRoute(prevState);
-                                            console.log(e)
-                                            prevState.rutas[prevState.rutas.length - 1] = {
-                                                ...lastRoute,
-                                                nombre: value
-                                            };
-
-                                            return {
-                                                ...prevState
-                                            };                                                                                        
-                                        })}}/>
-
-                                    </label>
-                                <label class = "descripcion">
-                                     Descripción:
-                                     <input type="text" value={this.getLastRoute().descripcion} onChange={(e) => {
-                                         var value = e.target.value;
-                                         this.setState(prevState => {
-                                            var lastRoute = this.getLastRoute(prevState);
-                                            console.log(e)
-                                            prevState.rutas[prevState.rutas.length - 1] = {
-                                                ...lastRoute,
-                                                descripcion: value
-                                            };
-
-                                            return {
-                                                ...prevState
-                                            };                                                                                        
-                                        })}}/>
-                                </label>
-                            </form>
-                            <button onClick={this.handleSave} className="btn btn-secondary">
-                                Guardar ruta
-                            </button>
-                            <button onClick={this.handleClear} className="btn btn-secondary">
-                                Borrar rutas almacenadas
-                            </button>
-                            <span>
-                                <p></p>
+                <div class="rutas">
+                    <div>{
+                        this.state.url ? <>
+                                <form>
+                                    <label> Nombre:
+                                        <input type="text" value={this.getLastRoute().nombre} onChange={(e) => {
+                                                let value = e.target.value;
+                                                this.setState(prevState => {
+                                                    let lastRoute = this.getLastRoute(prevState);
+                                                    prevState.rutas[prevState.rutas.length - 1] = {
+                                                        ...lastRoute,
+                                                        nombre: value
+                                                    };
+                                                    return {
+                                                        ...prevState
+                                                    };
+                                                })
+                                        }}/>
+                                        </label>
+                                        <label>Descripción:
+                                            <input type="text" value={this.getLastRoute().descripcion}
+                                                   onChange={(e) => {
+                                                       let value = e.target.value;
+                                                       this.setState(prevState => {
+                                                           let lastRoute = this.getLastRoute(prevState);
+                                                           prevState.rutas[prevState.rutas.length - 1] = {
+                                                               ...lastRoute,
+                                                               descripcion: value
+                                                           };
+                                                           return {
+                                                               ...prevState
+                                                           };
+                                                       })
+                                                   }}/>
+                                        </label>
+                                    </form>
+                                    <button onClick={this.handleSave} className="btn btn-secondary"> Guardar ruta </button>
+                                    <button onClick={this.handleClear} className="btn btn-secondary"> Borrar rutas almacenadas </button>
+                                    <span>
                             </span>
-                          
-                            {
-                                this.getLastPoint() && (
-                                    <ImageComponent url={this.state.url} addImage={this.addImageToLastPoint.bind(this)} />
-                                )
-                            }
-                        </>
-                        :
-                        <p class = "cargando">Cargando...</p>
+                                {
+                                    this.state.selectedPoint && (
+                                        <ImageComponent url={this.state.url}
+                                                        addImage={this.addImageToSelectedPoint.bind(this)}/>
+                                        )
+                                    }
+                                </> :
+                            <p>Cargando...</p>
+                        }
+                    </div>
+                    {/* MUESTRA LAS RUTAS A LA DERECHA */}
+                    <dl>
+                        {
+                            [...this.state.rutas.slice(0, -1)].map((route, i) => (
+                                <React.Fragment key={`route_${i}`}>
+                                    <dt>
+                                        <a href="/#" onClick={(e) => {
+                                            e.preventDefault();
+                                            this.setState((prevState) => ({
+                                                ...prevState,
+                                                selectedRoute: route
+                                            }))
+                                        }}>
+                                            {route.nombre}
+                                        </a>
+                                    </dt>
+                                    <dd>{route.descripcion}</dd>
+                                </React.Fragment>
+                            ))
+                        }
+                    </dl>
 
-                       
-                }
-                  </div>
-             
-
-                  
-                  <dl>
-                  
-                    {
-                       
-                        [...this.state.rutas.slice(0,-1), ...this.state.rutasCompartidas].map((route,i) => (
-                            <React.Fragment key={`route_${i}`}>
-                               
-                                <dt>
-                                    <a class = "anombre" href="/#" onClick={(e) => {
-                                        e.preventDefault();
-                                        this.setState((prevState) => ({
-                                            ...prevState,
-                                            selectedRoute: route
-                                        }))
-                                    }}>
-                                        {route.nombre}
-                                    </a>
-                                </dt>
-                                <dd>{route.descripcion}</dd>
-                                
-                            </React.Fragment>
-                        ))
-                        
-                    }
-                   
-                </dl>
-                
-                 </div>
+                </div>
                 <Map
                     google={this.props.google}
                     className={"map"}
-                    zoom={this.props.zoom}
-                    initialCenter={this.props.center}
+                    zoom={15}
+                    initialCenter={{
+                        lat:43.36029,
+                        lng:-5.84476
+                    }}
                     onReady={this.handleLoad}
                     onClick={this.handleMapClick}
-                >
+                    fullscreenControl={false}
+                    styles={estiloCustom}>
 
+                    {/* LINEA DE RUTAS CREADAS */}
                     <Polyline
                         path={this.state.selectedRoute.locations}
                         options={{
-                            strokeColor: "#00ffff",
+                            strokeColor: "#ffb01f",
                             strokeOpacity: 1,
-                            strokeWeight: 2,
-                            icons: [
-                                {
-                                    icon: "hello",
-                                    offset: "0",
-                                    repeat: "10px"
-                                }
-                            ]
-                        }}
-                    />
-
+                            strokeWeight: 2,}}/>
+                    {/* LINEA AL CREAR RUTAS */}
                     <Polyline
                         path={this.getLastRoute().locations}
                         options={{
-                            strokeColor: "#ff00ff",
+                            strokeColor: "#ea4335",
                             strokeOpacity: 1,
-                            strokeWeight: 2,
-                            icons: [
-                                {
-                                    icon: "hello",
-                                    offset: "0",
-                                    repeat: "10px"
-                                }
-                            ]
-                        }}
-                    />
+                            strokeWeight: 2,}}/>
 
                     {this.state.selectedRoute.locations.map((location, i) =>
-                        <Marker key={`marker1_${i}`} position={location} onClick={(props, marker) => this.setState(prevState => ({ ...prevState, selectedPoint: location }))} />
+                        <Marker key={`marker1_${i}`} position={location}
+                                onClick={(props, marker) => this.setState(prevState => ({
+                                    ...prevState,
+                                    selectedPoint: location
+                                }))}/>
                     )}
-
                     {this.getLastRoute().locations.map((location, i) =>
-                        <Marker key={`marker1_${i}`} position={location} onClick={(props, marker) => this.setState(prevState => ({ ...prevState, selectedPoint: location }))} />
+                        <Marker key={`marker1_${i}`} position={location}
+                                onClick={(props, marker) => this.setState(prevState => ({
+                                    ...prevState,
+                                    selectedPoint: location
+                                }))}/>
                     )}
 
+                    {/* GLOBO QUE SALE AL PULSAR UN MARCADOR Y QUE CONTIENE LAS IMAGENES */}
                     {
                         <InfoWindow visible={this.state.selectedPoint != null} position={this.state.selectedPoint}>
                             <div>
-                                <h1>Imágenes</h1>
-                                {
+                                <p>Imágenes</p>{
                                     this.state.selectedPoint && this.state.selectedPoint.images && this.state.selectedPoint.images.map((image, j) => (
-                                        <img key={`img_${j}`} src={new URL(image, this.state.url)} alt="" />
+                                        <img key={`img_${j}`} src={new URL(image, this.state.url)} alt=""/>
                                     ))
                                 }
                             </div>
                         </InfoWindow>
                     }
-
-
                 </Map>
             </div>
         );
@@ -403,5 +376,8 @@ export class MapComponent extends Component {
 }
 
 export default GoogleApiWrapper({
-    apiKey: "AIzaSyDwZUjR7_j6100CdDHxmCvi_Hi7Z681wS8"
+    //API DE PAGO
+    apiKey: "AIzaSyBzv5Utxl-rBk_OW8Jnkooi3FNkL1jGSXM"
+    //API GRATUITA
+    //apiKey: "AIzaSyDwZUjR7_j6100CdDHxmCvi_Hi7Z681wS8"
 })(MapComponent);

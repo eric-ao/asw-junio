@@ -1,0 +1,16 @@
+[[section-quality-scenarios]]
+== Requirimientos de calidad
+=== Árbol de calidad
+
+image::arbolRequisitosCalidad.png[Arbol de requisitos]
+
+=== Escenarios de calidad
+Aquí tenemos una muestra más en profundidad de los requisitos de calidad  que aparecen en el arbol del apartado 10.1.
+
+[options="header",cols="2,2,1"]
+|===
+|Requisito|Explicación|Prioridad
+| Disponibilidad | La aplicación ha de ser accesible el mayor tiempo posible. | Media
+| Usabilidad | Todo el mundo debería ser capaz de poder utilizar sin problemas la aplicación. | Alta
+| Rendimiento | No se debería observar ningún retardo o tiempo de carga largo al usar la aplicación. | Media 
+|===

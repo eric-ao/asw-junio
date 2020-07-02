@@ -1,0 +1,68 @@
+[[section-introduction-and-goals]]
+== Introducción y objetivos
+
+
+
+
+Vamos a crear Viade, un sistema de gestión de rutas descentralizado basado en las especificaciones Solid.
+
+
+Los usuarios de la aplicación podrán crear rutas y decidir con quien comparten esas rutas.
+
+Para realizar el sistema se utilizará el framework React.
+
+
+=== Vista de requisitos
+
+
+
+.Funcionales
+* El sistema se basará en una arquitectura descentralizada para que los datos estén separados de la aplicación.
+* Los usuarios podrán visualizar las rutas en una mapa.
+* Los usuarios podrán almacenar las rutas en sus propios pods.
+* Se permitirá al usuario compartir fotos, vídeos o otro tipo de ficheros con amigos, y podrá crear grupos con estos.
+* Un usuario podrá obtener notificaciones cuando otro usuario quiera compartir una ruta con él.
+
+
+.No Funcionales
+* Seguridad de la información de los usuarios usando datos descentralizados.
+* Sistema usable para todo tipo de usuarios.
+* El sistema debe ser capaz de operar adecuadamente con varias sesiones simultáneas.
+* El sistema debe ser compatible con otros sistemas de gestión de rutas.
+
+
+
+=== Atributos de calidad
+
+.Contenido
+Los atributos de calidad en los que nos centraremos durante el desarrolo serán los siguintes:
+
+* Disponibilidad, la intención de la aplicación es la de funcionar como una red social, por tanto, debemos tener la aplicación siempre disponible porque se espera tráfico constante de datos entre usuarios. 
+
+* Seguridad, una de las principales características de nuestra aplicacion es la de ofrecer a los usuarios un entorno seguro para compartir sus datos, así que la seguridad debe ser un punto importante a tener en cuenta.
+
+* Testabilidad, para poder desarrollar el proyecto de forma rápida debemos hacer la aplicación testeable para mantenerla organizada y no perder tiempo en el futuro con problemas iniciales.
+
+* Usabilidad, como la aplicación que queremos desarrollar es relativamente novedosa, nos interesa que sea fácil de usar y no genere rechazo por parte de los usuarios. 
+
+.Prioridad de los atributos
+A continuacción se muestra una tabla con los atributos de calidad ordenados por prioridad y hacia quien van dirigidos.
+[options="header",cols="1,2,2"]
+|===
+|Prioridad|Atributo|Personas interesadas
+| 1 | Seguridad | Todos
+| 2 | Usabilidad | Usuarios finales
+| 3 | Testabilidad | Equipo de desarrolo
+| 4 | Disponibilidad | Usuarios finales
+|===
+
+
+=== Stakeholders
+
+[options="header",cols="1,2,2"]
+|===
+|Role/Name|Descripcion|Expectativas
+| _Equipo de Desarrollo_ | _Encargados de desarrollar el producto._ | _Realizar un sistema que cumpla con los requisitos descritos en la documentación_
+| _Usuarios Finales_ | _Personas que acabarán utilizando el producto_ | _Deben poder utilizar almacenar y compartir sus rutas de una manera sencilla e intuititiva_
+| _Equipo de Profesores_ | _Profesorado de la asignatura_ | _Supervisar un desarrollo constante del proyecto para cumplir con los requisitos del mismo_
+|===

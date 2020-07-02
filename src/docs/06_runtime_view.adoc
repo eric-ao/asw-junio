@@ -1,0 +1,30 @@
+[[section-runtime-view]]
+== Vista de tiempo de ejecución
+
+
+
+
+A continuación, se mostrarán diagramas para poder ver la interacción que espera tener la aplicación en distintos escenarios.
+
+
+
+=== Login en Solid
+Cuando un usuario intente logearse en nuestro sistema deberá iniciar sesion con unas credenciales (por lo que necesitara
+un POD) que serán validados por SOLID, despues de esta validación SOLID aceptará o rechazará la petición de logeo.
+
+image::Sequence diagram.png[Diagrama de secuencia 1]
+
+
+
+=== Ver rutas de un usuario
+
+Cuando usuario(Autenticado) quiera ver sus rutas la aplicación se encargará de conectarse al POD del usuario y devolvera una vista con las rutas listadas siguiendo un criterio determinado.
+
+image::Sequence diagram2.png[Diagrama de secuencia 2]
+
+
+=== Ver lista de amigos
+Para ver la lista de amigos de un usuario, se introducirá en la aplicación el nombre del usuario del que queremos obtener la lista y la aplicación generará una interfaz con dicha lista.
+
+image::Sequence diagram3.png[Diagrama de secuencia 3]
+

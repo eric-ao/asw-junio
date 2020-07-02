@@ -1,14 +1,19 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import jsonTojsonLD from "./jsonTojsonLD.jsx";
-import { Point } from "./Clases.js";
+import {Point} from "./Clases.js";
 
 import SolidAuth from "solid-auth-client";
 import ldflex from "@solid/query-ldflex";
 
-import { Map, GoogleApiWrapper, Marker, Polyline, InfoWindow } from "google-maps-react";
+import {GoogleApiWrapper, InfoWindow, Map, Marker, Polyline} from "google-maps-react";
 import ImageComponent from '../Imagen/imagen.component';
 
+import {
+    estiloCustomDia, estiloCustomNoche
+} from './mapComponent.style';
+
 export class MapComponent extends Component {
+
     constructor(props) {
         super(props);
 
@@ -27,7 +32,8 @@ export class MapComponent extends Component {
                 locations: [],
                 nombre: '',
                 descripcion: ''
-            }
+            },
+            modo: estiloCustomDia
         };
 
         this.handleMapClick = this.handleMapClick.bind(this);
@@ -124,7 +130,6 @@ export class MapComponent extends Component {
                             load: true,
                             rutas: lista
                         }));
-
                     }
 
                 } else if (response.status === 404) {
@@ -254,19 +259,6 @@ export class MapComponent extends Component {
     }
 
     render() {
-        let estiloCustom = [{
-                featureType: "poi",
-                elementType: "all",
-                stylers: [
-                    {visibility: "off"}
-                ],
-                }, {
-                featureType: "water",
-                elementType: "all",
-                stylers: [
-                    {"saturation": "100"},
-                    {"lightness": "-6"}],
-                },];
 
     return (
             <div className="map-container">
@@ -356,7 +348,7 @@ export class MapComponent extends Component {
                     onReady={this.handleLoad}
                     onClick={this.handleMapClick}
                     fullscreenControl={false}
-                    styles={estiloCustom}>
+                    styles={this.state.modo}>
 
                     {/* LINEA DE RUTAS CREADAS */}
                     <Polyline

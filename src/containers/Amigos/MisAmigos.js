@@ -111,8 +111,8 @@ class MisAmigosComponent extends Component {
         return (
 
     <div className="app">
-        <h1 class="friends">Mis Rutas</h1>       
-          <p>Rutas de <div class="usuario"> <Value src="user.name"/> </div>.</p>
+        <h1 class="friends">Mis Amigos</h1>
+          <p>Amigos de <div class="usuario"> <Value src="user.name"/> </div>.</p>
           <div>
           <dl>
                   

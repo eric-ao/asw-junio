@@ -27,5 +27,7 @@ export const PanelWrapper = styled.div`
   }
   ${media.tablet`
     min-width: 420px;
+    border-radius: 50px;
+    
   `}
 `;

@@ -1,0 +1,20 @@
+.etiqueta {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.boton {
+    padding: 15px;
+    margin-top: 30px;
+    margin-right: 25px;
+    background-color: #EA7736;
+    opacity: 0.8;
+    color: white;
+    font-size: 16px;
+}
+
+.boton:hover {
+    background-color: #fff;
+    border-color: #EA7736;
+    color: #EA7736;
+}

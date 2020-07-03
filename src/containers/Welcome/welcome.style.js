@@ -2,10 +2,13 @@ import styled from 'styled-components';
 import { media } from '../../utils';
 
 export const WelcomeWrapper = styled.section`
-  width: 100%;
-  background-image: url('/img/concentric-hex-pattern_2x.png');
-  background-repeat: repeat;
-  padding: 50px 0;
+  width: 100%;  
+   background-image:
+        linear-gradient(rgba(255, 46, 0, 0.5), rgba(225, 224, 0, 0.2)), 
+        url('/img/concentric-hex-pattern_2x.png');
+}
+
+  
 
   h3 {
     color: #666666;

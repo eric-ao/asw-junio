@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+
 html,
 body,
 #root {
@@ -5,6 +7,7 @@ body,
   width: 100%;
   margin: 0;
   padding: 0;
+  background-color: transparent;
 }
 
 * {
@@ -69,15 +72,15 @@ Ends temporary react/fontawesome fix
 
 .link,
 .link-button {
-  color: #449df5;
+  color: #AD766B;
   font-family: Raleway;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 600;
   letter-spacing: 0.75px;
   line-height: 14px;
   text-align: center;
   text-decoration: none;
-  padding: 0;
+  padding-top: 30px;
 }
 
 .link:active,
@@ -85,6 +88,7 @@ Ends temporary react/fontawesome fix
 .link:hover,
 .link-button:hover {
   text-decoration: none;
+  color: #7d0000;
 }
 
 * {
@@ -101,7 +105,7 @@ Ends temporary react/fontawesome fix
 }
 
 .form-group > label {
-  color: #5361fd;
+  color: #722100;
   font-family: Raleway;
   font-size: 11px;
   font-weight: bold;
@@ -134,14 +138,15 @@ form-group .select-role {
 }
 
 .map {
-  height: calc(100% - 120px) !important;
+  height: calc(60%) !important;
+  width: calc(50%);
 }
 
 .rutas{
-
-  display:flex;
-  flex-wrap:wrap;
+  width: 100%;
   margin-left: 60px;
+  padding-bottom: 50px;
+
 }
 
 .datos{
@@ -175,7 +180,6 @@ dl{
 
 button{
 
-  margin-right: 90px;
   margin-top: 10px;
   
 }
@@ -186,8 +190,8 @@ button{
 }
 
 .map-container{
-
-  margin-top: -15px;
+  padding-top: 50px;
+  width: auto;
 }
 
 .anombre,dd{

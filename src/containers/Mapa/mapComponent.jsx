@@ -8,12 +8,14 @@ import ldflex from "@solid/query-ldflex";
 import {GoogleApiWrapper, InfoWindow, Map, Marker, Polyline} from "google-maps-react";
 import ImageComponent from '../Imagen/imagen.component';
 
+import './mapComponent.css';
+
 import {
-    estiloCustomDia, estiloCustomNoche
+    estiloCustomDia
 } from './mapComponent.style';
 
 export class MapComponent extends Component {
-
+//
     constructor(props) {
         super(props);
 
@@ -257,16 +259,15 @@ export class MapComponent extends Component {
             }
         })
     }
-
     render() {
 
     return (
             <div className="map-container">
-                <div>
+                <div class="rutas">
                     <div>{
                         this.state.url ? <>
                                 <form>
-                                    <label> Nombre:
+                                    <label class="etiqueta"> Nombre:
                                         <input type="text" value={this.getLastRoute().nombre} onChange={(e) => {
                                                 let value = e.target.value;
                                                 this.setState(prevState => {
@@ -280,8 +281,8 @@ export class MapComponent extends Component {
                                                     };
                                                 })
                                         }}/>
-                                        </label>
-                                        <label>Descripción:
+                                    </label>
+                                        <label class="etiqueta">Descripción:
                                             <input type="text" value={this.getLastRoute().descripcion}
                                                    onChange={(e) => {
                                                        let value = e.target.value;
@@ -298,10 +299,10 @@ export class MapComponent extends Component {
                                                    }}/>
                                         </label>
                                     </form>
-                                    <button onClick={this.handleSave} className="btn btn-secondary"> Guardar ruta </button>
-                                    <button onClick={this.handleClear} className="btn btn-secondary"> Borrar todas mis rutas</button>
-                                    <button onClick={this.handleDelete} className="btn btn-secondary"> Borrar ruta</button>
-                                    <button onClick={this.deletePoint} className="btn btn-secondary"> Borrar último punto</button>
+                                    <button onClick={this.handleSave} className="boton"> Guardar ruta </button>
+                                    <button onClick={this.handleClear} className="boton"> Borrar todas mis rutas</button>
+                                    <button onClick={this.handleDelete} className="boton"> Borrar ruta</button>
+                                    <button onClick={this.deletePoint} className="boton"> Borrar último punto</button>
                                     <span>
                             </span>
                                 {
@@ -337,6 +338,7 @@ export class MapComponent extends Component {
                     </dl>
 
                 </div>
+                <div>
                 <Map
                     google={this.props.google}
                     className={"map"}
@@ -393,6 +395,7 @@ export class MapComponent extends Component {
                         </InfoWindow>
                     }
                 </Map>
+                </div>
             </div>
         );
     }

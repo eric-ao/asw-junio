@@ -20,7 +20,7 @@ export const PanelHeader = styled.div`
   h2 {
     position: relative;
     padding: 0;
-    color: #5361fd;
+    color: #722100;
     font-family: Raleway;
     font-size: 20px;
     font-weight: bold;
@@ -35,7 +35,7 @@ export const PanelHeader = styled.div`
     position: absolute;
     height: 1px;
     width: 100%;
-    background: #5361fd;
+    background: #722100;
     top: 30px;
   }
 `;
@@ -46,7 +46,7 @@ export const PanelBody = styled.div`
 
   a {
     display: block;
-    color: #449df5;
+    color: #6D453D;
     font-family: Raleway;
     font-size: 12px;
     font-weight: 500;
@@ -62,6 +62,7 @@ export const PanelBody = styled.div`
 
   .a-with-spacing {
     margin: 24px 0;
+    font-size: 16px;
   }
 
   ul {
@@ -74,15 +75,15 @@ export const Actions = styled.div`
   height: 32px;
   box-sizing: border-box;
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
 
   button {
-    height: 32px;
-    width: 150px;
-    border-radius: 4px;
+    height: 40px;
+    width: 250px;
+    border-radius: 10px;
     font-family: Raleway;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: bold;
     letter-spacing: 0.89px;
     line-height: 11px;
@@ -93,13 +94,13 @@ export const Actions = styled.div`
   }
 
   .btn-solid {
-    background-color: #449df5;
+    background-color: #AC6C5F;
     color: #ffffff;
   }
 
   .btn-outlined {
     background-color: #ffffff;
-    color: #449df5;
+    color: #AC6C5F;
     filter: opacity(40%);
   }
 `;

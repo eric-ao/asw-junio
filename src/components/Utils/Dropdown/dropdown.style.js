@@ -11,7 +11,7 @@ export const DropdownContainer = styled.div`
   .icon {
     margin-right: 5px;
     font-size: 1rem;
-    color: #7c4dff;
+    color: #73392F;
     ${media.desktop`display: none; path { display: none }`}
   }
 `;

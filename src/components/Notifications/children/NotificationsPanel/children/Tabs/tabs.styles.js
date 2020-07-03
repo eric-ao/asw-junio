@@ -25,8 +25,8 @@ export const Tab = styled.li`
     }
 
     &:hover {
-      border-color: #5361fd;
-      color: #5361fd;
+      border-color: #8D1A00;
+      color: #8D1A00;
     }
   }
 `;

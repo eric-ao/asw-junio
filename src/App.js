@@ -16,7 +16,6 @@ import { Toaster } from './App.styled';
 
 library.add(fas);
 library.add(faGithub);
-
 const App = () => (
   <Suspense fallback={<Loader />}>
     <ThemeProvider theme={theme}>

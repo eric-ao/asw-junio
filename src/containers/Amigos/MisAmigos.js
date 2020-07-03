@@ -108,7 +108,7 @@ class MisAmigosComponent extends Component {
 
     <div className="app">
         <h1 class="friends">Mis Amigos</h1>
-          <p>Amigos de <div> <Value src="user.name"/> </div>.</p>
+          <p>Amigos de <div class="usuario"> <Value src="user.name"/> </div>.</p>
           <div>
           <dl>
 

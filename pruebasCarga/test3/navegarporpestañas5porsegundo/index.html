@@ -1,0 +1,1440 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="shortcut icon" type="image/x-icon" href="style/favicon.ico"/>
+<link href="style/style.css" rel="stylesheet" type="text/css" />
+<link href="style/bootstrap.min.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/gatling.js"></script>
+<script type="text/javascript" src="js/moment.min.js"></script>
+<script type="text/javascript" src="js/menu.js"></script>
+<script type="text/javascript" src="js/all_sessions.js"></script>
+<script type="text/javascript" src="js/stats.js"></script>
+<script type="text/javascript" src="js/highstock.js"></script>
+<script type="text/javascript" src="js/highcharts-more.js"></script>
+<script type="text/javascript" src="js/theme.js"></script>
+<script type="text/javascript" src="js/unpack.js"></script>
+<title>Gatling Stats - Global Information</title>
+</head>
+<body>
+<div class="frise"></div>
+<div class="container details">
+    <div class="head">
+        <a class="logo" href="https://gatling.io" target="blank_" title="Gatling Home Page"><img alt="Gatling" src="style/logo.svg"/></a>
+        <div class="frontline"><a href="https://gatling.io/gatling-frontline/?report" target="_blank">Get more features with Gatling FrontLine</a></div>
+    </div>
+    <div class="main">
+        <div class="cadre">
+                <div class="onglet">
+                    <img src="style/cible.png" />
+                    <p><span>navegarporpestan-as5porsegundo</span></p>
+                </div>
+                <div class="content">
+                    <div class="sous-menu">
+                        <div class="item ouvert"><a href="index.html">GLOBAL</a></div>
+                        <div class="item "><a id="details_link" href="#">DETAILS</a></div>
+                        <script type="text/javascript">
+                          var timestamp = 1593768149550;
+                          var runStartHumanDate = moment(timestamp).format("YYYY-MM-DD HH:mm:ss Z");
+                          document.writeln("<p class='sim_desc' title='"+ runStartHumanDate +", duration : 245 seconds' data-content=''>");
+                          document.writeln("<b>" + runStartHumanDate + ", duration : 245 seconds </b>");
+                          document.writeln("</p>");
+                        </script>
+                    </div>
+                    <div class="content-in">
+                        <h1><span>> </span>Global Information</h1>
+                        <div class="article">
+                            
+            <div class="schema polar">
+              <div id="container_number_of_requests"></div>
+            </div>
+
+            <div class="schema demi">
+              <div id="container_indicators" class="demi"></div>
+            </div>
+
+                        <div class="statistics extensible-geant collapsed">
+                            <div class="title">
+                                <div class="right">
+                                    <span class="expand-all-button">Expand all groups</span> | <span class="collapse-all-button">Collapse all groups</span>
+                                </div>
+                                <div id="statistics_title" class="title_collapsed">STATISTICS <span>(Click here to show more)</span></div>
+                            </div>
+                            <table id="container_statistics_head" class="statistics-in extensible-geant">
+                                <thead>
+                                    <tr>
+                                        <th rowspan="2" id="col-1" class="header sortable sorted-up"><span>Requests</span></th>
+                                        <th colspan="5" class="header"><span class="executions">Executions</span></th>
+                                        <th colspan="8" class="header"><span class="response-time">Response Time (ms)</span></th>
+                                    </tr>
+                                    <tr>
+                                        <th id="col-2" class="header sortable"><span>Total</span></th>
+                                        <th id="col-3" class="header sortable"><span>OK</span></th>
+                                        <th id="col-4" class="header sortable"><span>KO</span></th>
+                                        <th id="col-5" class="header sortable"><span>% KO</span></th>
+                                        <th id="col-6" class="header sortable"><span>Cnt/s</span></th>
+                                        <th id="col-7" class="header sortable"><span>Min</span></th>
+<th id="col-8" class="header sortable"><span>50th pct</span></th>
+<th id="col-9" class="header sortable"><span>75th pct</span></th>
+<th id="col-10" class="header sortable"><span>95th pct</span></th>
+<th id="col-11" class="header sortable"><span>99th pct</span></th>
+<th id="col-12" class="header sortable"><span>Max</span></th>
+<th id="col-13" class="header sortable"><span>Mean</span></th>
+<th id="col-14" class="header sortable"><span>Std Dev</span></th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                            <div class="scrollable">
+                                <table id="container_statistics_body" class="statistics-in extensible-geant">
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+<div class="statistics extensible-geant collapsed">
+    <div class="title">
+        <div class="title_collapsed" style="cursor: auto;">ERRORS</div>
+    </div>
+    <table id="container_errors" class="statistics-in extensible-geant">
+        <thead>
+            <tr>
+                <th id="error-col-1" class="header sortable"><span>Error</span></th>
+                <th id="error-col-2" class="header sortable"><span>Count</span></th>
+                <th id="error-col-3" class="header sortable"><span>Percentage</span></th>
+            </tr>
+        </thead>
+		<tbody>
+		    
+		    <tr>
+		    	<td class="error-col-1 total">i.n.c.ConnectTimeoutException: connection timed out: maps.googleapis.com/172.217.16.234:443<span class="value" style="display:none">0</span></td>
+		    	<td class="value error-col-2 total">8776</td>
+		    	<td class="value error-col-3 total">39.533 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">i.n.c.ConnectTimeoutException: connection timed out: ericcc.solid.community/165.227.231.225:443<span class="value" style="display:none">1</span></td>
+		    	<td class="value error-col-2 total">2817</td>
+		    	<td class="value error-col-3 total">12.69 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">i.n.c.ConnectTimeoutException: connection timed out: maps.gstatic.com/216.58.211.35:443<span class="value" style="display:none">2</span></td>
+		    	<td class="value error-col-2 total">1394</td>
+		    	<td class="value error-col-3 total">6.28 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">i.n.c.ConnectTimeoutException: connection timed out: fonts.gstatic.com/216.58.211.227:443<span class="value" style="display:none">3</span></td>
+		    	<td class="value error-col-2 total">481</td>
+		    	<td class="value error-col-3 total">2.167 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0028_response.html not found<span class="value" style="display:none">4</span></td>
+		    	<td class="value error-col-2 total">300</td>
+		    	<td class="value error-col-3 total">1.351 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0000_response.html not found<span class="value" style="display:none">5</span></td>
+		    	<td class="value error-col-2 total">300</td>
+		    	<td class="value error-col-3 total">1.351 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">i.n.c.ConnectTimeoutException: connection timed out: fonts.googleapis.com/216.58.211.234:443<span class="value" style="display:none">6</span></td>
+		    	<td class="value error-col-2 total">275</td>
+		    	<td class="value error-col-3 total">1.239 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0153_response.txt not found<span class="value" style="display:none">7</span></td>
+		    	<td class="value error-col-2 total">232</td>
+		    	<td class="value error-col-3 total">1.045 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0152_response.ttl not found<span class="value" style="display:none">8</span></td>
+		    	<td class="value error-col-2 total">218</td>
+		    	<td class="value error-col-3 total">0.982 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0121_response.png not found<span class="value" style="display:none">9</span></td>
+		    	<td class="value error-col-2 total">212</td>
+		    	<td class="value error-col-3 total">0.955 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">i.n.c.ConnectTimeoutException: connection timed out: maps.googleapis.com/216.58.201.170:443<span class="value" style="display:none">10</span></td>
+		    	<td class="value error-col-2 total">209</td>
+		    	<td class="value error-col-3 total">0.941 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">i.n.c.ConnectTimeoutException: connection timed out: solidsdk.inrupt.net/35.168.136.65:443<span class="value" style="display:none">11</span></td>
+		    	<td class="value error-col-2 total">190</td>
+		    	<td class="value error-col-3 total">0.856 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0115_response.png not found<span class="value" style="display:none">12</span></td>
+		    	<td class="value error-col-2 total">189</td>
+		    	<td class="value error-col-3 total">0.851 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0118_response.png not found<span class="value" style="display:none">13</span></td>
+		    	<td class="value error-col-2 total">187</td>
+		    	<td class="value error-col-3 total">0.842 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0117_response.png not found<span class="value" style="display:none">14</span></td>
+		    	<td class="value error-col-2 total">185</td>
+		    	<td class="value error-col-3 total">0.833 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0116_response.png not found<span class="value" style="display:none">15</span></td>
+		    	<td class="value error-col-2 total">183</td>
+		    	<td class="value error-col-3 total">0.824 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0120_response.png not found<span class="value" style="display:none">16</span></td>
+		    	<td class="value error-col-2 total">182</td>
+		    	<td class="value error-col-3 total">0.82 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0119_response.png not found<span class="value" style="display:none">17</span></td>
+		    	<td class="value error-col-2 total">182</td>
+		    	<td class="value error-col-3 total">0.82 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0109_response.png not found<span class="value" style="display:none">18</span></td>
+		    	<td class="value error-col-2 total">166</td>
+		    	<td class="value error-col-3 total">0.748 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0111_response.png not found<span class="value" style="display:none">19</span></td>
+		    	<td class="value error-col-2 total">166</td>
+		    	<td class="value error-col-3 total">0.748 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0114_response.png not found<span class="value" style="display:none">20</span></td>
+		    	<td class="value error-col-2 total">164</td>
+		    	<td class="value error-col-3 total">0.739 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0110_response.png not found<span class="value" style="display:none">21</span></td>
+		    	<td class="value error-col-2 total">163</td>
+		    	<td class="value error-col-3 total">0.734 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0112_response.png not found<span class="value" style="display:none">22</span></td>
+		    	<td class="value error-col-2 total">162</td>
+		    	<td class="value error-col-3 total">0.73 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0113_response.png not found<span class="value" style="display:none">23</span></td>
+		    	<td class="value error-col-2 total">161</td>
+		    	<td class="value error-col-3 total">0.725 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0137_response.ttl not found<span class="value" style="display:none">24</span></td>
+		    	<td class="value error-col-2 total">156</td>
+		    	<td class="value error-col-3 total">0.703 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0101_response.dat not found<span class="value" style="display:none">25</span></td>
+		    	<td class="value error-col-2 total">149</td>
+		    	<td class="value error-col-3 total">0.671 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">i.g.h.c.i.RequestTimeoutException: Request timeout to ericcc.solid.community/165.227.231.225:443 after 60000 ms<span class="value" style="display:none">26</span></td>
+		    	<td class="value error-col-2 total">147</td>
+		    	<td class="value error-col-3 total">0.662 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0104_response.png not found<span class="value" style="display:none">27</span></td>
+		    	<td class="value error-col-2 total">146</td>
+		    	<td class="value error-col-3 total">0.658 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0107_response.png not found<span class="value" style="display:none">28</span></td>
+		    	<td class="value error-col-2 total">142</td>
+		    	<td class="value error-col-3 total">0.64 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0105_response.png not found<span class="value" style="display:none">29</span></td>
+		    	<td class="value error-col-2 total">142</td>
+		    	<td class="value error-col-3 total">0.64 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0106_response.png not found<span class="value" style="display:none">30</span></td>
+		    	<td class="value error-col-2 total">141</td>
+		    	<td class="value error-col-3 total">0.635 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0108_response.png not found<span class="value" style="display:none">31</span></td>
+		    	<td class="value error-col-2 total">140</td>
+		    	<td class="value error-col-3 total">0.631 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0089_response.png not found<span class="value" style="display:none">32</span></td>
+		    	<td class="value error-col-2 total">129</td>
+		    	<td class="value error-col-3 total">0.581 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0091_response.png not found<span class="value" style="display:none">33</span></td>
+		    	<td class="value error-col-2 total">125</td>
+		    	<td class="value error-col-3 total">0.563 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0090_response.png not found<span class="value" style="display:none">34</span></td>
+		    	<td class="value error-col-2 total">125</td>
+		    	<td class="value error-col-3 total">0.563 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0098_response.dat not found<span class="value" style="display:none">35</span></td>
+		    	<td class="value error-col-2 total">125</td>
+		    	<td class="value error-col-3 total">0.563 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0096_response.dat not found<span class="value" style="display:none">36</span></td>
+		    	<td class="value error-col-2 total">124</td>
+		    	<td class="value error-col-3 total">0.559 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0092_response.png not found<span class="value" style="display:none">37</span></td>
+		    	<td class="value error-col-2 total">122</td>
+		    	<td class="value error-col-3 total">0.55 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0083_response.png not found<span class="value" style="display:none">38</span></td>
+		    	<td class="value error-col-2 total">112</td>
+		    	<td class="value error-col-3 total">0.505 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0086_response.png not found<span class="value" style="display:none">39</span></td>
+		    	<td class="value error-col-2 total">111</td>
+		    	<td class="value error-col-3 total">0.5 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0136_response.ttl not found<span class="value" style="display:none">40</span></td>
+		    	<td class="value error-col-2 total">110</td>
+		    	<td class="value error-col-3 total">0.496 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0085_response.png not found<span class="value" style="display:none">41</span></td>
+		    	<td class="value error-col-2 total">109</td>
+		    	<td class="value error-col-3 total">0.491 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0088_response.png not found<span class="value" style="display:none">42</span></td>
+		    	<td class="value error-col-2 total">109</td>
+		    	<td class="value error-col-3 total">0.491 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0087_response.png not found<span class="value" style="display:none">43</span></td>
+		    	<td class="value error-col-2 total">108</td>
+		    	<td class="value error-col-3 total">0.487 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0084_response.png not found<span class="value" style="display:none">44</span></td>
+		    	<td class="value error-col-2 total">107</td>
+		    	<td class="value error-col-3 total">0.482 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0126_response.dat not found<span class="value" style="display:none">45</span></td>
+		    	<td class="value error-col-2 total">103</td>
+		    	<td class="value error-col-3 total">0.464 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0051_response.txt not found<span class="value" style="display:none">46</span></td>
+		    	<td class="value error-col-2 total">101</td>
+		    	<td class="value error-col-3 total">0.455 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0135_response.txt not found<span class="value" style="display:none">47</span></td>
+		    	<td class="value error-col-2 total">97</td>
+		    	<td class="value error-col-3 total">0.437 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0052_response.txt not found<span class="value" style="display:none">48</span></td>
+		    	<td class="value error-col-2 total">95</td>
+		    	<td class="value error-col-3 total">0.428 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0134_response.ttl not found<span class="value" style="display:none">49</span></td>
+		    	<td class="value error-col-2 total">92</td>
+		    	<td class="value error-col-3 total">0.414 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0077_response.png not found<span class="value" style="display:none">50</span></td>
+		    	<td class="value error-col-2 total">92</td>
+		    	<td class="value error-col-3 total">0.414 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0078_response.png not found<span class="value" style="display:none">51</span></td>
+		    	<td class="value error-col-2 total">91</td>
+		    	<td class="value error-col-3 total">0.41 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0079_response.png not found<span class="value" style="display:none">52</span></td>
+		    	<td class="value error-col-2 total">91</td>
+		    	<td class="value error-col-3 total">0.41 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0081_response.png not found<span class="value" style="display:none">53</span></td>
+		    	<td class="value error-col-2 total">89</td>
+		    	<td class="value error-col-3 total">0.401 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0080_response.png not found<span class="value" style="display:none">54</span></td>
+		    	<td class="value error-col-2 total">87</td>
+		    	<td class="value error-col-3 total">0.392 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0082_response.png not found<span class="value" style="display:none">55</span></td>
+		    	<td class="value error-col-2 total">86</td>
+		    	<td class="value error-col-3 total">0.387 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0072_response.dat not found<span class="value" style="display:none">56</span></td>
+		    	<td class="value error-col-2 total">73</td>
+		    	<td class="value error-col-3 total">0.329 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0068_response.dat not found<span class="value" style="display:none">57</span></td>
+		    	<td class="value error-col-2 total">73</td>
+		    	<td class="value error-col-3 total">0.329 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0069_response.dat not found<span class="value" style="display:none">58</span></td>
+		    	<td class="value error-col-2 total">71</td>
+		    	<td class="value error-col-3 total">0.32 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0075_response.png not found<span class="value" style="display:none">59</span></td>
+		    	<td class="value error-col-2 total">70</td>
+		    	<td class="value error-col-3 total">0.315 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0074_response.dat not found<span class="value" style="display:none">60</span></td>
+		    	<td class="value error-col-2 total">69</td>
+		    	<td class="value error-col-3 total">0.311 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0076_response.png not found<span class="value" style="display:none">61</span></td>
+		    	<td class="value error-col-2 total">67</td>
+		    	<td class="value error-col-3 total">0.302 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0050_response.ttl not found<span class="value" style="display:none">62</span></td>
+		    	<td class="value error-col-2 total">65</td>
+		    	<td class="value error-col-3 total">0.293 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0073_response.ttl not found<span class="value" style="display:none">63</span></td>
+		    	<td class="value error-col-2 total">61</td>
+		    	<td class="value error-col-3 total">0.275 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">status.find.in(200,201,202,203,204,205,206,207,208,209,304), found 401<span class="value" style="display:none">64</span></td>
+		    	<td class="value error-col-2 total">38</td>
+		    	<td class="value error-col-3 total">0.171 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0099_response.txt not found<span class="value" style="display:none">65</span></td>
+		    	<td class="value error-col-2 total">33</td>
+		    	<td class="value error-col-3 total">0.149 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0066_response.dat not found<span class="value" style="display:none">66</span></td>
+		    	<td class="value error-col-2 total">32</td>
+		    	<td class="value error-col-3 total">0.144 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0061_response.dat not found<span class="value" style="display:none">67</span></td>
+		    	<td class="value error-col-2 total">32</td>
+		    	<td class="value error-col-3 total">0.144 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0065_response.dat not found<span class="value" style="display:none">68</span></td>
+		    	<td class="value error-col-2 total">32</td>
+		    	<td class="value error-col-3 total">0.144 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0062_response.dat not found<span class="value" style="display:none">69</span></td>
+		    	<td class="value error-col-2 total">31</td>
+		    	<td class="value error-col-3 total">0.14 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0063_response.dat not found<span class="value" style="display:none">70</span></td>
+		    	<td class="value error-col-2 total">31</td>
+		    	<td class="value error-col-3 total">0.14 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0064_response.dat not found<span class="value" style="display:none">71</span></td>
+		    	<td class="value error-col-2 total">30</td>
+		    	<td class="value error-col-3 total">0.135 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0094_response.css not found<span class="value" style="display:none">72</span></td>
+		    	<td class="value error-col-2 total">25</td>
+		    	<td class="value error-col-3 total">0.113 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0070_response.png not found<span class="value" style="display:none">73</span></td>
+		    	<td class="value error-col-2 total">25</td>
+		    	<td class="value error-col-3 total">0.113 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0067_response.bmp not found<span class="value" style="display:none">74</span></td>
+		    	<td class="value error-col-2 total">23</td>
+		    	<td class="value error-col-3 total">0.104 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0071_response.png not found<span class="value" style="display:none">75</span></td>
+		    	<td class="value error-col-2 total">21</td>
+		    	<td class="value error-col-3 total">0.095 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0095_response.png not found<span class="value" style="display:none">76</span></td>
+		    	<td class="value error-col-2 total">20</td>
+		    	<td class="value error-col-3 total">0.09 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0103_response.svg not found<span class="value" style="display:none">77</span></td>
+		    	<td class="value error-col-2 total">17</td>
+		    	<td class="value error-col-3 total">0.077 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0102_response.ttl not found<span class="value" style="display:none">78</span></td>
+		    	<td class="value error-col-2 total">17</td>
+		    	<td class="value error-col-3 total">0.077 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0097_response.dat not found<span class="value" style="display:none">79</span></td>
+		    	<td class="value error-col-2 total">16</td>
+		    	<td class="value error-col-3 total">0.072 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0122_response.txt not found<span class="value" style="display:none">80</span></td>
+		    	<td class="value error-col-2 total">15</td>
+		    	<td class="value error-col-3 total">0.068 %</td>
+		    </tr>
+		    <tr>
+		    	<td class="error-col-1 total">Check validator resolution crashed: Resource /recordedsimulation/0100_response.txt not found<span class="value" style="display:none">81</span></td>
+		    	<td class="value error-col-2 total">15</td>
+		    	<td class="value error-col-3 total">0.068 %</td>
+		    </tr>
+		</tbody>
+    </table>
+</div>
+
+            <div class="schema geant">
+              <a name="active_users"></a>
+              <div id="container_active_users" class="geant"></div>
+            </div>
+
+            <div class="schema geant">
+              <div id="container_distrib" class="geant"></div>
+            </div>
+
+            <div class="schema geant">
+              <div id="container" class="geant"></div>
+            </div>
+
+            <div class="schema geant">
+              <a name="requests"></a>
+                <div id="container_requests" class="geant"></div>
+            </div>
+
+            <div class="schema geant">
+              <a name="responses"></a>
+                <div id="container_responses" class="geant"></div>
+            </div>
+
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <div class="nav">
+        <ul></ul>
+    </div>
+</div>
+<script type="text/javascript">
+    var pageStats = stats.stats;
+    $(document).ready(function() {
+        $('.sim_desc').popover({trigger:'hover', placement:'bottom'});
+        setDetailsLinkUrl();
+        setGlobalMenu();
+        setActiveMenu();
+        fillStats(pageStats);
+        
+function numberOfRequestsDataForGroup(group) {
+  var data = {names: [], oks: [], kos: []};
+
+  $.each(group.contents, function(contentName, content) {
+    if (content.type == 'GROUP') {
+      var result = numberOfRequestsDataForGroup(content);
+      data.names = data.names.concat(result.names);
+      data.oks = data.oks.concat(result.oks);
+      data.kos = data.kos.concat(result.kos);
+    }
+    else if (content.type == 'REQUEST') {
+      data.names.push(content.path);
+      data.oks.push(parseInt(content.stats.numberOfRequests.ok));
+      data.kos.push(parseInt(content.stats.numberOfRequests.ko));
+    }
+  });
+
+  return data;
+}
+
+var numberOfRequestsData = numberOfRequestsDataForGroup(stats);
+
+new Highcharts.Chart({
+  chart: {
+    renderTo:'container_number_of_requests',
+    polar:true,
+    type:'column',
+    height:330
+  },
+  credits:{
+    enabled:false
+  },
+  title:{
+    text:'<span class="chart_title">Number of requests</span>',
+    useHTML: true
+  },
+  xAxis:{
+    tickmarkPlacement:'on',
+    tickInterval: 1,
+    categories:numberOfRequestsData.names,
+    labels:{ enabled:false }
+  },
+  yAxis:{
+    min:0
+  },
+  plotOptions:{
+    series:{
+      stacking:'normal',
+      groupPadding:0,
+      pointPlacement:'on',
+      shadow: true
+    }
+  },
+  legend: {
+    	borderWidth: 0.5,
+      borderRadius: 3,
+      borderColor: 'black',
+      itemStyle: { fontWeight: "normal" }
+  },
+  series:[
+    {
+      name:'KO',
+      data:numberOfRequestsData.kos,
+      color:"#FF0000"
+    },
+    {
+      name:'OK',
+      data:numberOfRequestsData.oks,
+      color:"#4572A7"
+    }
+  ]
+});
+
+Highcharts.setOptions({
+  global: { useUTC: false }
+});
+
+var indicatorsChart = new Highcharts.Chart({
+  chart: {
+    renderTo: 'container_indicators',
+    marginRight: 150
+  },
+  credits: { enabled: false },
+  legend: { enabled: false },
+  title: { text: 'A title to let highcharts reserve the place for the title set later' },
+  xAxis: {
+    categories: [
+      pageStats.group1.name,
+      pageStats.group2.name,
+      pageStats.group3.name,
+      pageStats.group4.name
+    ]
+  },
+  yAxis: {
+    title: { text: 'Number of Requests' }
+  },
+  tooltip: {
+    formatter: function() {
+      var s;
+      if (this.point.name) { // the pie chart
+        s = ''+ this.point.name +': '+ this.y +'% requests';
+      } else {
+        s = ''+ this.y + ' requests';
+      }
+      return s;
+    }
+  },
+  plotOptions: {
+    series: {
+      stacking: 'normal',
+      shadow: true
+    }
+  },
+  series: [
+    {
+      type: 'column',
+      data: [{
+      	color: '#A0B228',
+      	y: pageStats.group1.count
+      },
+      {
+      	color: '#FFDD00',
+      	y: pageStats.group2.count
+      },
+      {
+      	color: '#FF9D00',
+      	y: pageStats.group3.count
+      },
+      {
+      	color: '#FF0000',
+      	y: pageStats.group4.count
+      }]
+    },
+    {
+      type: 'pie',
+      name: 'Percentages',
+      data: [
+        {
+          name: pageStats.group1.name,
+          y: pageStats.group1.percentage,
+          color: '#A0B228'
+        },
+        {
+          name: pageStats.group2.name,
+          y: pageStats.group2.percentage,
+          color: '#FFDD00'
+        },
+        {
+          name: pageStats.group3.name,
+          y: pageStats.group3.percentage,
+          color: '#FF9D00'
+        },
+        {
+          name: pageStats.group4.name,
+          y: pageStats.group4.percentage,
+          color: '#FF0000'
+        }
+      ],
+      center: [470, 85],
+      size: 100,
+      showInLegend: false,
+      dataLabels: { enabled: false }
+    }
+  ]
+});
+
+indicatorsChart.setTitle({
+  text: '<span class="chart_title">Indicators</span>',
+  useHTML: true
+});
+
+	    $('#container_exceptions').sortable('#container_exceptions');
+    
+
+  function shortenNameAndDisplayFullOnHover(name){
+   if (name.length < 20)
+       return name;
+   else
+     return "<span class='tooltipContent'>"+name+"</span>" + name.substr(0,8)+"..."+name.substr(name.length-8,name.length);
+  }
+
+function generateHtmlRow(request, level, index, parent, group) {
+    if (request.name == 'Global Information')
+        var url = 'index.html';
+    else
+        var url = request.pathFormatted + '.html';
+
+    if (group)
+        var expandButtonStyle = '';
+    else
+        var expandButtonStyle = ' hidden';
+
+    if (request.stats.numberOfRequests.total != 0)
+        var koPercent = (request.stats.numberOfRequests.ko * 100 / request.stats.numberOfRequests.total).toFixed(0) + '%';
+    else
+        var koPercent = '-'
+
+    return '<tr id="' + request.pathFormatted + '" class="child-of-' + parent + '"> \
+        <td class="total col-1"> \
+            <span id="' + request.pathFormatted + '" style="margin-left: ' + (level * 10) + 'px;" class="expand-button' + expandButtonStyle + '">&nbsp;</span> \
+            <a href="' + url +'" class="withTooltip">' + shortenNameAndDisplayFullOnHover(request.name) + '</a><span class="value" style="display:none;">' + index + '</span> \
+        </td> \
+        <td class="value total col-2">' + request.stats.numberOfRequests.total + '</td> \
+        <td class="value ok col-3">' + request.stats.numberOfRequests.ok + '</td> \
+        <td class="value ko col-4">' + request.stats.numberOfRequests.ko + '</td> \
+        <td class="value ko col-5">' + koPercent + '</td> \
+        <td class="value total col-6">' + request.stats.meanNumberOfRequestsPerSecond.total + '</td> \
+        <td class="value total col-7">' + request.stats.minResponseTime.total + '</td> \
+        <td class="value total col-8">' + request.stats.percentiles1.total + '</td> \
+        <td class="value total col-9">' + request.stats.percentiles2.total + '</td> \
+        <td class="value total col-10">' + request.stats.percentiles3.total + '</td> \
+        <td class="value total col-11">' + request.stats.percentiles4.total + '</td> \
+        <td class="value total col-12">' + request.stats.maxResponseTime.total + '</td> \
+        <td class="value total col-13">' + request.stats.meanResponseTime.total + '</td> \
+        <td class="value total col-14">' + request.stats.standardDeviation.total + '</td> \
+        </tr>';
+}
+
+function generateHtmlRowsForGroup(group, level, index, parent) {
+    var buffer = '';
+
+    if (!parent)
+        parent = 'ROOT';
+    else {
+        buffer += generateHtmlRow(group, level - 1, index, parent, true);
+        index++;
+        parent = group.pathFormatted;
+    }
+
+    $.each(group.contents, function(contentName, content) {
+        if (content.type == 'GROUP') {
+            var result = generateHtmlRowsForGroup(content, level + 1, index, parent);
+            buffer += result.html;
+            index = result.index;
+        }
+        else if (content.type == 'REQUEST') {
+            buffer += generateHtmlRow(content, level, index, parent);
+            index++;
+        }
+    });
+
+    return { html: buffer, index: index };
+}
+
+$('#container_statistics_head tbody').append(generateHtmlRow(stats, 0, 0));
+
+var lines = generateHtmlRowsForGroup(stats, 0, 0)
+$('#container_statistics_body tbody').append(lines.html);
+
+$('#container_statistics_head').sortable('#container_statistics_body');
+$('.statistics').expandable();
+
+if (lines.index < 30) {
+    $('#statistics_title span').attr('style', 'display: none;');
+    $('#statistics_title').attr('style', 'cursor: auto;')
+}
+else {
+    $('#statistics_title').click(function(){
+        $(this).toggleClass('title_collapsed').toggleClass('title_not_collapsed');
+        $('#container_statistics_body').parent().toggleClass('scrollable').toggleClass('');
+    });
+}
+
+	    $('#container_errors').sortable('#container_errors');
+    
+allUsersData.yAxis = 0;
+
+var allUsersChart = new Highcharts.StockChart({
+  chart: {
+    renderTo: 'container_active_users',
+    zoomType: 'x'
+  },
+  credits: { enabled: false },
+  legend: {
+    enabled: true,
+    floating: true,
+    align: 'right',
+    verticalAlign: 'top',
+    layout: 'vertical',
+    borderWidth: 0,
+    itemStyle: { fontWeight: "normal" }
+  },
+  title: { text: 'A title to let highcharts reserve the place for the title set later' },
+  rangeSelector: {
+    buttonSpacing: 0,
+    buttonTheme: {
+      fill: 'LightGrey',
+      padding: 1,
+      stroke: 'Black',
+      'stroke-width': 0.25,
+      style: {
+        color: 'Black',
+        fontWeight: 'bold',
+      },
+      states: {
+        stroke: 'Black',
+        'stroke-width': 0.25,
+        hover: {
+          fill: 'DarkGrey',
+          style: { color: 'black' }
+        },
+        select: {
+          fill: 'DarkOrange',
+          style: { color: 'white' }
+        }
+      }
+    },
+    buttons : [
+      {
+        type : 'minute',
+        count : 1,
+        text : '1m'
+      }, {
+        type : 'minute',
+        count : 10,
+        text : '10m'
+      }, {
+        type : 'hour',
+        count : 1,
+        text : '1h'
+      }, {
+        type : 'all',
+        count : 1,
+        text : 'All'
+      }
+    ],
+    selected : 3,
+    inputEnabled : false
+  },
+  xAxis: {
+    type: 'datetime',
+    ordinal: false,
+    maxZoom: 10000 // three days
+  },
+  yAxis: {
+    title: { text: 'Number of Active Users' },
+    opposite: false,
+    min: 0
+  },
+  series: [
+    {
+color: '#4572A7',
+name: 'RecordedSimulation',
+data: [
+  [1593768150000,5],[1593768151000,10],[1593768152000,15],[1593768153000,20],[1593768154000,25],[1593768155000,30],[1593768156000,35],[1593768157000,40],[1593768158000,45],[1593768159000,50],[1593768160000,55],[1593768161000,60],[1593768162000,65],[1593768163000,71],[1593768164000,75],[1593768165000,80],[1593768166000,85],[1593768167000,90],[1593768168000,95],[1593768169000,100],[1593768170000,105],[1593768171000,110],[1593768172000,115],[1593768173000,120],[1593768174000,125],[1593768175000,130],[1593768176000,135],[1593768177000,140],[1593768178000,145],[1593768179000,150],[1593768180000,155],[1593768181000,160],[1593768182000,165],[1593768183000,170],[1593768184000,175],[1593768185000,180],[1593768186000,185],[1593768187000,191],[1593768188000,195],[1593768189000,200],[1593768190000,205],[1593768191000,210],[1593768192000,215],[1593768193000,220],[1593768194000,225],[1593768195000,230],[1593768196000,235],[1593768197000,241],[1593768198000,245],[1593768199000,250],[1593768200000,255],[1593768201000,260],[1593768202000,265],[1593768203000,270],[1593768204000,274],[1593768205000,279],[1593768206000,284],[1593768207000,289],[1593768208000,294],[1593768209000,299],[1593768210000,299],[1593768211000,299],[1593768212000,299],[1593768213000,299],[1593768214000,299],[1593768215000,299],[1593768216000,299],[1593768217000,299],[1593768218000,299],[1593768219000,299],[1593768220000,299],[1593768221000,299],[1593768222000,299],[1593768223000,299],[1593768224000,299],[1593768225000,299],[1593768226000,299],[1593768227000,299],[1593768228000,299],[1593768229000,299],[1593768230000,297],[1593768231000,295],[1593768232000,294],[1593768233000,294],[1593768234000,294],[1593768235000,292],[1593768236000,292],[1593768237000,291],[1593768238000,288],[1593768239000,285],[1593768240000,282],[1593768241000,278],[1593768242000,276],[1593768243000,275],[1593768244000,273],[1593768245000,273],[1593768246000,272],[1593768247000,270],[1593768248000,267],[1593768249000,266],[1593768250000,265],[1593768251000,264],[1593768252000,261],[1593768253000,260],[1593768254000,258],[1593768255000,256],[1593768256000,254],[1593768257000,250],[1593768258000,248],[1593768259000,248],[1593768260000,245],[1593768261000,243],[1593768262000,242],[1593768263000,242],[1593768264000,241],[1593768265000,240],[1593768266000,238],[1593768267000,236],[1593768268000,234],[1593768269000,233],[1593768270000,231],[1593768271000,230],[1593768272000,226],[1593768273000,223],[1593768274000,221],[1593768275000,218],[1593768276000,216],[1593768277000,211],[1593768278000,208],[1593768279000,207],[1593768280000,206],[1593768281000,203],[1593768282000,199],[1593768283000,197],[1593768284000,196],[1593768285000,195],[1593768286000,195],[1593768287000,194],[1593768288000,193],[1593768289000,190],[1593768290000,190],[1593768291000,190],[1593768292000,189],[1593768293000,187],[1593768294000,186],[1593768295000,184],[1593768296000,183],[1593768297000,181],[1593768298000,180],[1593768299000,179],[1593768300000,179],[1593768301000,179],[1593768302000,176],[1593768303000,175],[1593768304000,174],[1593768305000,174],[1593768306000,174],[1593768307000,172],[1593768308000,169],[1593768309000,167],[1593768310000,167],[1593768311000,166],[1593768312000,163],[1593768313000,158],[1593768314000,155],[1593768315000,155],[1593768316000,155],[1593768317000,155],[1593768318000,153],[1593768319000,153],[1593768320000,152],[1593768321000,152],[1593768322000,151],[1593768323000,151],[1593768324000,150],[1593768325000,150],[1593768326000,149],[1593768327000,148],[1593768328000,147],[1593768329000,147],[1593768330000,145],[1593768331000,144],[1593768332000,142],[1593768333000,137],[1593768334000,131],[1593768335000,128],[1593768336000,126],[1593768337000,124],[1593768338000,121],[1593768339000,117],[1593768340000,112],[1593768341000,111],[1593768342000,109],[1593768343000,109],[1593768344000,104],[1593768345000,102],[1593768346000,101],[1593768347000,97],[1593768348000,94],[1593768349000,94],[1593768350000,94],[1593768351000,90],[1593768352000,89],[1593768353000,88],[1593768354000,86],[1593768355000,83],[1593768356000,77],[1593768357000,74],[1593768358000,71],[1593768359000,66],[1593768360000,64],[1593768361000,62],[1593768362000,59],[1593768363000,58],[1593768364000,57],[1593768365000,55],[1593768366000,53],[1593768367000,49],[1593768368000,45],[1593768369000,44],[1593768370000,37],[1593768371000,32],[1593768372000,29],[1593768373000,28],[1593768374000,24],[1593768375000,22],[1593768376000,21],[1593768377000,20],[1593768378000,17],[1593768379000,13],[1593768380000,11],[1593768381000,9],[1593768382000,8],[1593768383000,6],[1593768384000,5],[1593768385000,2],[1593768386000,2],[1593768387000,2],[1593768388000,2],[1593768389000,2],[1593768390000,2],[1593768391000,2],[1593768392000,2],[1593768393000,2],[1593768394000,2]
+],
+tooltip: { yDecimals: 0, ySuffix: '', valueDecimals: 0 }},
+
+    allUsersData
+  ]
+});
+
+
+allUsersChart.setTitle({
+  text: '<span class="chart_title">Active Users along the Simulation</span>',
+  useHTML: true
+});
+
+allUsersData.yAxis = 1;
+
+var responseTimeDistributionChart = new Highcharts.Chart({
+  chart: {
+    renderTo: 'container_distrib',
+    type: 'column'
+  },
+  credits: {
+    enabled: false
+  },
+  legend: {
+    enabled: true,
+    floating: true,
+    y: -285,
+    borderWidth: 0,
+    itemStyle: {
+      fontWeight: "normal"
+    }
+  },
+  title: {
+    text: 'A title to let highcharts reserve the place for the title set later'
+  },
+  xAxis: {
+    categories: ['300', '900', '1500', '2100', '2700', '3300', '3900', '4501', '5101', '5701', '6301', '6901', '7501', '8101', '8701', '9301', '9901', '10501', '11101', '11701', '12301', '12902', '13502', '14102', '14702', '15302', '15902', '16502', '17102', '17702', '18302', '18902', '19502', '20102', '20702', '21302', '21903', '22503', '23103', '23703', '24303', '24903', '25503', '26103', '26703', '27303', '27903', '28503', '29103', '29703', '30304', '30904', '31504', '32104', '32704', '33304', '33904', '34504', '35104', '35704', '36304', '36904', '37504', '38104', '38705', '39305', '39905', '40505', '41105', '41705', '42305', '42905', '43505', '44105', '44705', '45305', '45905', '46505', '47105', '47706', '48306', '48906', '49506', '50106', '50706', '51306', '51906', '52506', '53106', '53706', '54306', '54906', '55506', '56107', '56707', '57307', '57907', '58507', '59107', '59707'],
+    tickInterval: 20
+  },
+  yAxis: {
+    min: 0,
+    title: {
+      text: 'Percentage of Requests'
+    }
+  },
+  tooltip: {
+    formatter: function() {
+      return '<b>'+ this.x +' ms</b><br/>'+
+      this.series.name +': '+ this.y +' %<br/>'+
+      'Total: '+ this.point.stackTotal + ' %';
+    }
+  },
+  plotOptions: {
+    series: {
+      groupPadding: 0,
+      stacking: 'normal',
+      shadow: true
+    }
+  },
+  series: [
+  	{
+type: 'column',
+color: '#4572A7',
+name: 'OK',
+data: [
+  33.33,0.01,0.01,0.01,0.01,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+],
+tooltip: { yDecimals: 0, ySuffix: 'ms' }
+},
+  	{
+type: 'column',
+color: '#FF0000',
+name: 'KO',
+data: [
+  17.71,0.77,0.92,0.45,0.16,0.62,0.33,0.2,0.15,0.11,0.12,0.13,0.46,0.26,0.12,0.08,42.55,0.08,0.07,0.09,0.05,0.07,0.05,0.05,0.04,0.03,0.02,0.01,0.02,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.01,0.0,0.01,0.0,0.0,0.01,0.01,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.44
+],
+tooltip: { yDecimals: 0, ySuffix: 'ms' }
+}
+  ]
+});
+
+responseTimeDistributionChart.setTitle({
+  text: '<span class="chart_title">Response Time Distribution</span>',
+  useHTML: true
+});
+
+var responseTimePercentiles = unpack([[1593768150,null],[1593768151,null],[1593768152,null],[1593768153,[1,3,6,13,14,14,15,21,28,31]],[1593768154,[1,2,4,14,14,15,16,20,22,23]],[1593768155,[1,2,4,13,14,14,16,20,394,448]],[1593768156,[1,2,4,14,14,15,16,19,258,750]],[1593768157,[1,2,4,14,15,15,16,17,18,19]],[1593768158,[0,2,3,14,14,15,16,18,283,1169]],[1593768159,[1,2,4,13,14,15,15,16,18,19]],[1593768160,[1,2,3,13,14,15,15,18,1165,1428]],[1593768161,[0,1,3,13,13,14,15,17,18,18]],[1593768162,[1,1,4,13,14,15,16,17,18,20]],[1593768163,[0,2,2,13,13,14,15,16,17,18]],[1593768164,[0,1,4,13,14,15,16,16,18,18]],[1593768165,[0,1,3,13,14,15,15,16,333,2280]],[1593768166,[1,1,3,13,15,15,15,16,17,20]],[1593768167,[1,1,3,14,14,14,16,16,17,18]],[1593768168,[0,2,3,13,14,15,15,16,18,19]],[1593768169,[0,1,3,13,13,14,15,17,17,17]],[1593768170,[0,1,3,13,13,14,14,16,17,17]],[1593768171,[0,1,3,14,14,14,15,16,836,3578]],[1593768172,[0,1,3,14,14,14,16,16,18,18]],[1593768173,[1,1,3,14,14,15,15,17,615,2613]],[1593768174,[0,1,3,14,15,16,18,39,688,2847]],[1593768175,[0,2,3,14,14,14,15,16,17,18]],[1593768176,[1,2,9,16,17,19,20,21,2470,6687]],[1593768177,[0,2,4,15,15,16,16,17,18,20]],[1593768178,[1,2,4,15,15,15,16,17,296,1755]],[1593768179,[0,2,6,15,16,16,17,17,58,2037]],[1593768180,[0,2,3,14,15,15,17,17,18,18]],[1593768181,[1,2,3,14,14,15,15,17,2385,2558]],[1593768182,[1,2,4,16,17,17,18,18,19,2290]],[1593768183,[0,2,3,15,15,16,16,16,47,1548]],[1593768184,[0,2,4,14,15,15,16,17,19,19]],[1593768185,[1,2,3,13,13,14,15,17,994,1273]],[1593768186,[0,1,3,13,13,14,15,17,242,2503]],[1593768187,[0,2,3,13,14,15,15,16,17,7815]],[1593768188,[0,2,3,15,15,16,16,16,18,1816]],[1593768189,[1,2,4,15,15,17,18,19,20,20]],[1593768190,[1,1,3,15,15,15,15,16,102,968]],[1593768191,[0,2,3,15,15,15,17,17,18,18]],[1593768192,[0,2,4,15,15,16,16,18,18,18]],[1593768193,[0,2,3,15,15,15,16,17,396,566]],[1593768194,[0,1,2,14,14,15,15,15,16,16]],[1593768195,[1,2,3,14,15,15,16,20,25,28]],[1593768196,[0,2,3,15,15,15,16,17,17,17]],[1593768197,[0,1,3,13,15,15,15,17,205,261]],[1593768198,[0,2,3,13,14,15,15,16,16,185]],[1593768199,[0,2,3,10,13,13,14,16,17,19]],[1593768200,[0,2,3,14,15,16,16,16,17,28]],[1593768201,[0,1,3,12,14,15,16,17,18,18]],[1593768202,[0,1,2,12,13,13,14,15,15,17]],[1593768203,[1,2,4,15,16,16,19,20,22,22]],[1593768204,[0,1,3,14,14,15,15,17,18,582]],[1593768205,[0,1,2,13,14,14,16,18,2738,7821]],[1593768206,[0,1,2,13,14,14,15,16,16,17]],[1593768207,[0,1,3,14,14,15,15,15,16,17]],[1593768208,[0,1,2,12,13,14,15,15,16,16]],[1593768209,[0,1,2,13,13,14,15,16,16,17]],[1593768210,[0,1,2,3,12,13,14,15,16,17]],[1593768211,[0,1,3,14,14,15,15,15,17,188]],[1593768212,[0,1,2,13,14,15,15,17,18,18]],[1593768213,[0,1,2,4,13,13,14,15,16,19]],[1593768214,[0,1,2,2,3,4,4,4,4,4]],[1593768215,[0,1,2,2,2,3,3,3,3,3]],[1593768216,[0,2,2,3,3,3,3,3,3,3]],[1593768217,[0,1,2,2,2,2,3,3,3,4]],[1593768218,[0,1,2,3,3,6,11,16,16,16]],[1593768219,[0,1,2,3,3,3,3,3,3956,8988]],[1593768220,[0,1,2,3,3,3,4,4,4,4]],[1593768221,[0,2,2,3,3,3,3,3,3,3]],[1593768222,[0,1,2,3,3,3,3,3,4,4]],[1593768223,[1,1,2,3,3,3,3,4,4,4]],[1593768224,[0,1,2,2,3,3,3,3,3,3]],[1593768225,[0,1,2,2,2,2,2,2,2,2]],[1593768226,[0,1,2,3,3,3,3,226,644,749]],[1593768227,[1,1,2,3,4,4,4,4,4,4]],[1593768228,[1,2,2,2,2,2,3,3,3,3]],[1593768229,[1,1,2,2,2,2,2,2,2,2]],[1593768230,[0,1,2,2,2,2,3,3,3,3]],[1593768231,[0,1,2,2,2,2,2,2,2,2]],[1593768232,[0,1,1,2,2,2,2,2,2,2]],[1593768233,[0,1,1,2,2,2,2,2,2,2]],[1593768234,[0,1,1,2,2,2,2,2,2,2]],[1593768235,[1,1,1,2,2,2,3,3,3,3]],[1593768236,[0,1,1,2,2,2,2,2,2,2]],[1593768237,[0,1,1,2,2,3,3,3,3,3]],[1593768238,[0,1,1,2,2,2,2,2,2,2]],[1593768239,[0,1,1,2,2,2,2,2,2,2]],[1593768240,[0,1,1,2,2,2,2,3,3,3]],[1593768241,[0,1,1,2,2,2,2,2,3,3]],[1593768242,[0,1,1,2,2,2,2,2,2,3]],[1593768243,[0,1,1,2,2,2,2,3,3,3]],[1593768244,[0,1,1,2,2,2,2,2,2,2]],[1593768245,[1,2,2,2,2,2,2,2,2,3]],[1593768246,[0,1,2,2,3,4,4,4,15,15]],[1593768247,[0,1,2,2,2,2,2,2,2,2]],[1593768248,[0,1,1,2,2,2,2,2,2,2]],[1593768249,[0,1,1,2,2,2,2,2,2,3]],[1593768250,[0,1,1,1,2,2,2,2,2,2]],[1593768251,[0,1,1,2,2,2,2,2,2,2]],[1593768252,[0,1,2,2,3,3,3,3,3,3]],[1593768253,null],[1593768254,[0,1,1,2,2,2,2,2,2,2]],[1593768255,[0,1,1,2,2,2,2,2,2,2]],[1593768256,[1,1,2,2,2,2,2,2,2,2]],[1593768257,[0,1,2,2,2,2,3,3,3,3]],[1593768258,[0,1,1,3,3,3,3,3,3,3]],[1593768259,[0,1,1,2,2,2,2,2,2,2]],[1593768260,[0,1,1,2,2,2,2,2,2,2]],[1593768261,[0,1,2,3,3,3,3,3,3,3]],[1593768262,[0,1,1,2,2,2,2,2,2,2]],[1593768263,[0,1,1,1,2,2,2,2,2,2]],[1593768264,[0,1,1,2,2,2,2,2,2,2]],[1593768265,[0,1,1,1,1,3,3,3,4,4]],[1593768266,[0,1,2,2,2,2,2,2,2,2]],[1593768267,[0,1,2,2,2,2,2,2,2,2]],[1593768268,[0,1,2,2,2,3,3,3,3,3]],[1593768269,[1,1,2,2,2,2,2,2,2,2]],[1593768270,[0,1,2,2,3,3,3,3,3,3]],[1593768271,[0,1,2,2,2,2,2,2,2,3]],[1593768272,[0,1,1,1,2,2,2,2,2,2]],[1593768273,[0,1,2,2,2,2,2,2,2,2]],[1593768274,[0,1,1,2,2,2,2,2,2,2]],[1593768275,[0,1,1,2,2,2,2,2,2,2]],[1593768276,[0,1,2,2,2,2,3,3,4,4]],[1593768277,[0,1,1,1,1,2,2,2,2,2]],[1593768278,[0,1,1,2,2,2,2,2,2,2]],[1593768279,[0,1,2,2,2,2,2,2,2,2]],[1593768280,[0,1,2,2,2,2,2,2,2,2]],[1593768281,[1,1,2,2,2,3,3,3,4,4]],[1593768282,[0,1,2,3,3,3,3,3,5,5]],[1593768283,[0,1,1,2,2,2,2,2,2,2]],[1593768284,[0,1,2,2,2,3,3,3,3,3]],[1593768285,[0,1,2,2,2,2,3,3,4,4]],[1593768286,[0,1,1,2,2,2,2,2,2,3]],[1593768287,[0,1,1,2,2,3,3,3,3,3]],[1593768288,[0,1,2,2,2,2,2,2,2,2]],[1593768289,[0,1,2,3,3,3,3,3,3,3]],[1593768290,[0,1,2,2,2,2,2,3,3,3]],[1593768291,[0,1,2,2,2,2,2,2,2,2]],[1593768292,[0,1,2,2,2,2,2,3,3,3]],[1593768293,[0,1,2,2,2,3,3,3,4,4]],[1593768294,[1,1,2,4,4,5,8,9,9,9]],[1593768295,[0,1,3,3,3,3,4,4,4,4]],[1593768296,[0,1,2,3,3,5,5,5,5,5]],[1593768297,[0,2,2,3,3,4,4,4,4,5]],[1593768298,[1,2,2,4,4,5,5,7,7,7]],[1593768299,[0,1,2,2,3,3,3,3,4,4]],[1593768300,[0,1,2,2,2,2,2,2,2,3]],[1593768301,[0,1,2,2,2,2,3,3,3,3]],[1593768302,[0,1,2,2,2,4,4,5,5,5]],[1593768303,[0,1,2,2,2,2,2,3,3,3]],[1593768304,[1,1,2,2,2,2,2,2,2,2]],[1593768305,[0,1,2,2,2,2,2,3,3,3]],[1593768306,null],[1593768307,[0,1,2,2,2,2,2,3,4,4]],[1593768308,[0,1,1,2,2,2,2,2,3,3]],[1593768309,[0,1,2,2,2,2,2,3,3,3]],[1593768310,[1,1,2,2,2,2,2,2,2,3]],[1593768311,[0,1,2,2,2,2,2,2,2,2]],[1593768312,[1,2,2,2,3,3,3,3,3,3]],[1593768313,[0,2,2,2,4,4,4,4,4,5]],[1593768314,[0,1,2,2,2,2,3,3,3,3]],[1593768315,[0,1,2,3,3,3,3,3,3,3]],[1593768316,[0,1,2,2,2,2,2,2,2,2]],[1593768317,null],[1593768318,[1,1,2,2,2,2,2,2,2,2]],[1593768319,[0,1,2,2,2,2,2,2,2,2]],[1593768320,[0,1,2,3,3,3,3,4,4,4]],[1593768321,null],[1593768322,[0,1,2,2,2,2,2,2,2,2]],[1593768323,[1,2,2,2,2,2,2,2,2,3]],[1593768324,[0,1,1,1,1,2,2,2,2,2]],[1593768325,null],[1593768326,null],[1593768327,[1,2,3,3,3,3,3,3,3,3]],[1593768328,null],[1593768329,[0,1,1,3,3,3,3,3,3,3]],[1593768330,[0,1,2,2,2,2,2,2,2,2]],[1593768331,[0,1,2,2,2,2,2,3,3,3]],[1593768332,[0,1,2,3,3,3,3,3,3,3]],[1593768333,[1,2,2,2,2,2,2,2,2,2]],[1593768334,null],[1593768335,[1,1,2,2,3,3,3,3,3,3]],[1593768336,[0,1,2,2,2,2,2,2,2,2]],[1593768337,[0,1,1,1,1,1,1,1,1,2]],[1593768338,[0,1,2,3,3,3,3,3,3,3]],[1593768339,[0,1,1,1,1,1,1,1,1,1]],[1593768340,null],[1593768341,[1,2,2,2,2,2,2,2,2,2]],[1593768342,null],[1593768343,[0,1,2,2,2,2,2,2,2,2]],[1593768344,[1,1,1,1,1,1,1,1,1,1]],[1593768345,null],[1593768346,[1,1,2,2,2,2,2,2,2,2]],[1593768347,[0,1,2,2,2,2,2,2,2,2]],[1593768348,null],[1593768349,[1,2,3,3,3,3,3,3,3,4]],[1593768350,[1,1,1,2,2,3,3,3,3,3]],[1593768351,null],[1593768352,[1,1,2,2,2,2,2,2,2,3]],[1593768353,[0,1,1,2,2,2,2,2,2,2]],[1593768354,[0,1,2,2,2,3,3,3,3,3]],[1593768355,[0,1,2,2,2,2,2,2,2,3]],[1593768356,[0,1,2,2,2,2,2,2,2,2]],[1593768357,[1,1,2,2,2,2,2,2,2,3]],[1593768358,[0,1,2,2,2,2,2,2,2,2]],[1593768359,[1,2,2,2,2,2,2,3,3,3]],[1593768360,[0,1,2,2,3,3,3,3,3,3]],[1593768361,[0,1,2,2,2,2,2,2,2,2]],[1593768362,[0,1,2,2,2,2,3,3,3,3]],[1593768363,[0,1,1,3,3,3,3,3,3,3]],[1593768364,[0,1,2,2,2,2,2,3,3,3]],[1593768365,[0,1,2,2,2,2,3,3,3,3]],[1593768366,[1,1,2,2,2,2,2,2,2,2]],[1593768367,[0,1,2,2,2,2,2,2,2,2]],[1593768368,[0,1,1,2,2,2,3,3,3,3]],[1593768369,[0,1,2,2,2,2,2,2,2,2]],[1593768370,null],[1593768371,[0,1,1,2,2,2,2,2,2,2]],[1593768372,null],[1593768373,null],[1593768374,[1,1,1,1,1,1,1,1,1,1]],[1593768375,[1,1,2,2,2,2,2,2,2,2]],[1593768376,[0,1,2,2,2,2,2,2,2,2]],[1593768377,[0,1,2,2,2,2,2,2,2,2]],[1593768378,[0,2,2,2,2,2,2,2,2,2]],[1593768379,[1,2,3,3,3,3,3,4,4,4]],[1593768380,[0,1,2,2,2,2,2,2,2,2]],[1593768381,[0,1,2,3,3,3,3,3,3,4]],[1593768382,[1,1,2,2,2,2,2,2,2,2]],[1593768383,null],[1593768384,[0,1,2,2,2,2,3,3,3,3]],[1593768385,null],[1593768386,null],[1593768387,null],[1593768388,null],[1593768389,null],[1593768390,null],[1593768391,null],[1593768392,null],[1593768393,null],[1593768394,[1,2,2,2,2,3,3,3,3,3]]]);
+
+var responseTimeChart = new Highcharts.StockChart({
+  chart: {
+    renderTo: 'container',
+    zoomType: 'x'
+  },
+  colors: ['#C4FD90', '#7FF77F', '#6FF2AD', '#60ECE5', '#51A8E7', '#4353E2', '#7335DC', '#BC28D7', '#D11C97', '#C73905', 'Orange'],
+  credits: { enabled: false },
+  legend: {
+    enabled: true,
+    floating: true,
+    y: -65,
+    borderWidth: 0,
+    itemStyle: { fontWeight: "normal" }
+  },
+  title: { text: 'A title to let highcharts reserve the place for the title set later' },
+  navigator: { baseSeries: 9 },
+  rangeSelector: {
+    rangeSelector: { align: "left" },
+    buttonSpacing: 0,
+    buttonTheme: {
+      fill: 'LightGrey',
+      padding: 1,
+      stroke: 'Black',
+      'stroke-width': 0.25,
+      style: {
+        color: 'Black',
+        fontWeight: 'bold',
+      },
+      states: {
+        stroke: 'Black',
+        'stroke-width': 0.25,
+        hover: {
+          fill: 'DarkGrey',
+          style: { color: 'black' }
+        },
+        select: {
+          fill: 'DarkOrange',
+          style: { color: 'white' }
+        }
+      }
+    },
+    buttons : [
+      {
+        type : 'minute',
+        count : 1,
+        text : '1m'
+      }, {
+        type : 'minute',
+        count : 10,
+        text : '10m'
+      }, {
+        type : 'hour',
+        count : 1,
+        text : '1h'
+      }, {
+        type : 'all',
+        count : 1,
+        text : 'All'
+      }
+    ],
+    selected : 3,
+    inputEnabled : false
+  },
+  xAxis: {
+    type: 'datetime',
+    ordinal: false,
+    maxZoom: 10000 // three days
+  },
+  yAxis:[
+    {
+      min: 0,
+      title: {
+        text: 'Response Time (ms)',
+        style: { color: '#4572A7' }
+      },
+      opposite: false
+    }, {
+      min: 0,
+      title: {
+        text: 'Active Users',
+        style: { color: '#FF9D00' }
+      },
+      opposite: true
+    }
+  ],
+  plotOptions: {
+    arearange: { lineWidth: 1 },
+    series: {
+      dataGrouping: { enabled: false }
+    }
+  },
+  series: [
+  
+    
+         {
+pointInterval: 1000,
+name: 'min',
+data: responseTimePercentiles[0],
+tooltip: { yDecimals: 0, ySuffix: 'ms' },
+type : 'area',
+yAxis: 0,
+zIndex: 10
+},
+         {
+pointInterval: 1000,
+name: '25%',
+data: responseTimePercentiles[1],
+tooltip: { yDecimals: 0, ySuffix: 'ms' },
+type : 'area',
+yAxis: 0,
+zIndex: 9
+},
+         {
+pointInterval: 1000,
+name: '50%',
+data: responseTimePercentiles[2],
+tooltip: { yDecimals: 0, ySuffix: 'ms' },
+type : 'area',
+yAxis: 0,
+zIndex: 8
+},
+         {
+pointInterval: 1000,
+name: '75%',
+data: responseTimePercentiles[3],
+tooltip: { yDecimals: 0, ySuffix: 'ms' },
+type : 'area',
+yAxis: 0,
+zIndex: 7
+},
+         {
+pointInterval: 1000,
+name: '80%',
+data: responseTimePercentiles[4],
+tooltip: { yDecimals: 0, ySuffix: 'ms' },
+type : 'area',
+yAxis: 0,
+zIndex: 6
+},
+         {
+pointInterval: 1000,
+name: '85%',
+data: responseTimePercentiles[5],
+tooltip: { yDecimals: 0, ySuffix: 'ms' },
+type : 'area',
+yAxis: 0,
+zIndex: 5
+},
+         {
+pointInterval: 1000,
+name: '90%',
+data: responseTimePercentiles[6],
+tooltip: { yDecimals: 0, ySuffix: 'ms' },
+type : 'area',
+yAxis: 0,
+zIndex: 4
+},
+         {
+pointInterval: 1000,
+name: '95%',
+data: responseTimePercentiles[7],
+tooltip: { yDecimals: 0, ySuffix: 'ms' },
+type : 'area',
+yAxis: 0,
+zIndex: 3
+},
+         {
+pointInterval: 1000,
+name: '99%',
+data: responseTimePercentiles[8],
+tooltip: { yDecimals: 0, ySuffix: 'ms' },
+type : 'area',
+yAxis: 0,
+zIndex: 2
+},
+         {
+pointInterval: 1000,
+name: 'max',
+data: responseTimePercentiles[9],
+tooltip: { yDecimals: 0, ySuffix: 'ms' },
+type : 'area',
+yAxis: 0,
+zIndex: 1
+},
+  allUsersData
+  ]
+});
+
+responseTimeChart.setTitle({
+  text: '<span class="chart_title chart_title_">Response Time Percentiles over Time (OK)</span>',
+  useHTML: true
+});
+
+var container_requests = unpack([[1593768150,[3,3, 0]],[1593768151,[5,5, 0]],[1593768152,[8,8, 0]],[1593768153,[61,19, 42]],[1593768154,[95,25, 70]],[1593768155,[195,109, 86]],[1593768156,[261,167, 94]],[1593768157,[179,109, 70]],[1593768158,[164,86, 78]],[1593768159,[96,26, 70]],[1593768160,[190,104, 86]],[1593768161,[139,69, 70]],[1593768162,[96,26, 70]],[1593768163,[121,33, 88]],[1593768164,[95,25, 70]],[1593768165,[134,47, 87]],[1593768166,[101,31, 70]],[1593768167,[133,63, 70]],[1593768168,[121,44, 77]],[1593768169,[95,25, 70]],[1593768170,[121,44, 77]],[1593768171,[131,53, 78]],[1593768172,[116,46, 70]],[1593768173,[133,55, 78]],[1593768174,[132,54, 78]],[1593768175,[141,64, 77]],[1593768176,[202,109, 93]],[1593768177,[192,101, 91]],[1593768178,[201,116, 85]],[1593768179,[219,120, 99]],[1593768180,[229,145, 84]],[1593768181,[260,153, 107]],[1593768182,[248,142, 106]],[1593768183,[245,146, 99]],[1593768184,[236,138, 98]],[1593768185,[278,164, 114]],[1593768186,[231,139, 92]],[1593768187,[273,160, 113]],[1593768188,[344,222, 122]],[1593768189,[177,93, 84]],[1593768190,[231,139, 92]],[1593768191,[331,201, 130]],[1593768192,[386,249, 137]],[1593768193,[386,256, 130]],[1593768194,[279,174, 105]],[1593768195,[280,182, 98]],[1593768196,[394,266, 128]],[1593768197,[437,300, 137]],[1593768198,[382,255, 127]],[1593768199,[350,229, 121]],[1593768200,[380,234, 146]],[1593768201,[373,259, 114]],[1593768202,[382,259, 123]],[1593768203,[339,225, 114]],[1593768204,[344,238, 106]],[1593768205,[422,290, 132]],[1593768206,[440,312, 128]],[1593768207,[376,271, 105]],[1593768208,[371,259, 112]],[1593768209,[381,260, 121]],[1593768210,[390,240, 150]],[1593768211,[370,257, 113]],[1593768212,[356,235, 121]],[1593768213,[286,196, 90]],[1593768214,[231,169, 62]],[1593768215,[313,246, 67]],[1593768216,[333,268, 65]],[1593768217,[434,360, 74]],[1593768218,[401,300, 101]],[1593768219,[288,231, 57]],[1593768220,[353,256, 97]],[1593768221,[314,265, 49]],[1593768222,[389,308, 81]],[1593768223,[382,303, 79]],[1593768224,[219,177, 42]],[1593768225,[150,141, 9]],[1593768226,[181,166, 15]],[1593768227,[284,261, 23]],[1593768228,[426,391, 35]],[1593768229,[351,319, 32]],[1593768230,[349,292, 57]],[1593768231,[286,261, 25]],[1593768232,[299,285, 14]],[1593768233,[286,240, 46]],[1593768234,[172,156, 16]],[1593768235,[174,158, 16]],[1593768236,[223,173, 50]],[1593768237,[216,193, 23]],[1593768238,[267,221, 46]],[1593768239,[233,188, 45]],[1593768240,[282,225, 57]],[1593768241,[326,244, 82]],[1593768242,[246,221, 25]],[1593768243,[238,197, 41]],[1593768244,[150,107, 43]],[1593768245,[143,129, 14]],[1593768246,[249,180, 69]],[1593768247,[209,173, 36]],[1593768248,[196,164, 32]],[1593768249,[151,135, 16]],[1593768250,[186,163, 23]],[1593768251,[216,168, 48]],[1593768252,[217,192, 25]],[1593768253,[184,184, 0]],[1593768254,[191,155, 36]],[1593768255,[210,187, 23]],[1593768256,[135,119, 16]],[1593768257,[226,149, 77]],[1593768258,[140,126, 14]],[1593768259,[150,111, 39]],[1593768260,[142,124, 18]],[1593768261,[167,144, 23]],[1593768262,[208,144, 64]],[1593768263,[126,112, 14]],[1593768264,[166,102, 64]],[1593768265,[109,77, 32]],[1593768266,[131,92, 39]],[1593768267,[162,132, 30]],[1593768268,[164,96, 68]],[1593768269,[68,52, 16]],[1593768270,[180,114, 66]],[1593768271,[164,114, 50]],[1593768272,[116,100, 16]],[1593768273,[168,118, 50]],[1593768274,[202,111, 91]],[1593768275,[128,78, 50]],[1593768276,[120,72, 48]],[1593768277,[146,107, 39]],[1593768278,[112,87, 25]],[1593768279,[119,60, 59]],[1593768280,[108,63, 45]],[1593768281,[148,94, 54]],[1593768282,[64,30, 34]],[1593768283,[159,77, 82]],[1593768284,[109,39, 70]],[1593768285,[139,55, 84]],[1593768286,[99,56, 43]],[1593768287,[141,70, 71]],[1593768288,[129,68, 61]],[1593768289,[62,28, 34]],[1593768290,[95,54, 41]],[1593768291,[82,41, 41]],[1593768292,[72,29, 43]],[1593768293,[115,47, 68]],[1593768294,[67,26, 41]],[1593768295,[31,13, 18]],[1593768296,[83,30, 53]],[1593768297,[72,29, 43]],[1593768298,[87,27, 60]],[1593768299,[92,31, 61]],[1593768300,[45,20, 25]],[1593768301,[60,21, 39]],[1593768302,[78,25, 53]],[1593768303,[62,21, 41]],[1593768304,[41,13, 28]],[1593768305,[56,20, 36]],[1593768306,[3,3, 0]],[1593768307,[39,11, 28]],[1593768308,[57,18, 39]],[1593768309,[64,21, 43]],[1593768310,[24,8, 16]],[1593768311,[43,13, 30]],[1593768312,[22,6, 16]],[1593768313,[55,16, 39]],[1593768314,[35,12, 23]],[1593768315,[29,11, 18]],[1593768316,[35,12, 23]],[1593768317,[1,1, 0]],[1593768318,[12,5, 7]],[1593768319,[19,5, 14]],[1593768320,[30,9, 21]],[1593768321,[1,1, 0]],[1593768322,[13,6, 7]],[1593768323,[20,6, 14]],[1593768324,[9,2, 7]],[1593768325,[0,0, 0]],[1593768326,[2,2, 0]],[1593768327,[10,3, 7]],[1593768328,[1,1, 0]],[1593768329,[18,4, 14]],[1593768330,[9,2, 7]],[1593768331,[28,7, 21]],[1593768332,[36,8, 28]],[1593768333,[27,6, 21]],[1593768334,[1,1, 0]],[1593768335,[45,10, 35]],[1593768336,[45,10, 35]],[1593768337,[9,2, 7]],[1593768338,[18,4, 14]],[1593768339,[9,2, 7]],[1593768340,[0,0, 0]],[1593768341,[10,3, 7]],[1593768342,[0,0, 0]],[1593768343,[27,6, 21]],[1593768344,[9,2, 7]],[1593768345,[0,0, 0]],[1593768346,[9,2, 7]],[1593768347,[9,2, 7]],[1593768348,[1,1, 0]],[1593768349,[9,2, 7]],[1593768350,[27,6, 21]],[1593768351,[2,2, 0]],[1593768352,[9,2, 7]],[1593768353,[19,5, 14]],[1593768354,[18,4, 14]],[1593768355,[37,9, 28]],[1593768356,[18,4, 14]],[1593768357,[19,5, 14]],[1593768358,[10,3, 7]],[1593768359,[28,7, 21]],[1593768360,[30,9, 21]],[1593768361,[46,11, 35]],[1593768362,[29,8, 21]],[1593768363,[37,9, 28]],[1593768364,[27,6, 21]],[1593768365,[27,6, 21]],[1593768366,[9,2, 7]],[1593768367,[10,3, 7]],[1593768368,[36,8, 28]],[1593768369,[18,4, 14]],[1593768370,[0,0, 0]],[1593768371,[18,4, 14]],[1593768372,[0,0, 0]],[1593768373,[0,0, 0]],[1593768374,[9,2, 7]],[1593768375,[9,2, 7]],[1593768376,[10,3, 7]],[1593768377,[18,4, 14]],[1593768378,[19,5, 14]],[1593768379,[19,5, 14]],[1593768380,[11,4, 7]],[1593768381,[18,4, 14]],[1593768382,[11,4, 7]],[1593768383,[1,1, 0]],[1593768384,[27,6, 21]],[1593768385,[0,0, 0]],[1593768386,[0,0, 0]],[1593768387,[0,0, 0]],[1593768388,[0,0, 0]],[1593768389,[0,0, 0]],[1593768390,[0,0, 0]],[1593768391,[0,0, 0]],[1593768392,[0,0, 0]],[1593768393,[0,0, 0]],[1593768394,[9,2, 7]]]);
+
+var requestsChart = new Highcharts.StockChart({
+  chart: {
+    renderTo: 'container_requests',
+    zoomType: 'x'
+  },
+  credits: { enabled: false },
+  legend: {
+    enabled: true,
+    floating: true,
+    itemDistance: 10,
+    y: -285,
+    borderWidth: 0,
+    itemStyle: { fontWeight: "normal" }
+  },
+  title: { text: 'A title to let highcharts reserve the place for the title set later' },
+  rangeSelector: {
+    buttonSpacing: 0,
+    buttonTheme: {
+      fill: 'LightGrey',
+      padding: 1,
+      stroke: 'Black',
+      'stroke-width': 0.25,
+      style: {
+        color: 'Black',
+        fontWeight: 'bold',
+      },
+      states: {
+        stroke: 'Black',
+        'stroke-width': 0.25,
+        hover: {
+          fill: 'DarkGrey',
+          style: { color: 'black' }
+         },
+         select: {
+          fill: 'DarkOrange',
+          style: { color: 'white' }
+        }
+      }
+    },
+    buttons : [
+      {
+        type : 'minute',
+        count : 1,
+        text : '1m'
+      }, {
+        type : 'minute',
+        count : 10,
+        text : '10m'
+      }, {
+        type : 'hour',
+        count : 1,
+        text : '1h'
+      }, {
+        type : 'all',
+        count : 1,
+        text : 'All'
+      }
+    ],
+    selected : 3,
+    inputEnabled : false
+  },
+  plotOptions: {
+    series: {
+      dataGrouping: { enabled: false }
+    },
+    area: {
+      stacking: 'normal'
+    }
+  },
+  xAxis: {
+    type: 'datetime',
+    ordinal: false,
+    maxZoom: 10000 // three days
+  },
+  yAxis:[
+    {
+      min: 0,
+      title: {
+        text: 'Number of requests',
+        style: { color: '#4572A7' }
+      },
+      opposite: false
+    }, {
+      min: 0,
+      title: {
+        text: 'Active Users',
+        style: { color: '#FF9D00' }
+      },
+      opposite: true
+    }
+  ],
+  series: [
+    {
+color: '#4572A7',
+name: 'All',
+data: container_requests[0],
+tooltip: { yDecimals: 0, ySuffix: '', valueDecimals: 0 }
+,type: 'area'},
+    allUsersData
+  ]
+});
+
+requestsChart.setTitle({
+  text: '<span class="chart_title">Number of requests per second</span>',
+  useHTML: true
+});
+
+var container_responses = unpack([[1593768150,[3,3, 0]],[1593768151,[5,5, 0]],[1593768152,[8,8, 0]],[1593768153,[53,11, 42]],[1593768154,[87,17, 70]],[1593768155,[166,81, 85]],[1593768156,[216,121, 95]],[1593768157,[191,121, 70]],[1593768158,[149,72, 77]],[1593768159,[94,23, 71]],[1593768160,[156,72, 84]],[1593768161,[144,73, 71]],[1593768162,[87,16, 71]],[1593768163,[110,22, 88]],[1593768164,[89,19, 70]],[1593768165,[101,15, 86]],[1593768166,[97,27, 70]],[1593768167,[128,57, 71]],[1593768168,[91,14, 77]],[1593768169,[86,16, 70]],[1593768170,[96,19, 77]],[1593768171,[102,25, 77]],[1593768172,[113,43, 70]],[1593768173,[109,32, 77]],[1593768174,[101,24, 77]],[1593768175,[140,61, 79]],[1593768176,[140,49, 91]],[1593768177,[136,44, 92]],[1593768178,[197,112, 85]],[1593768179,[155,56, 99]],[1593768180,[218,134, 84]],[1593768181,[182,76, 106]],[1593768182,[156,51, 105]],[1593768183,[188,89, 99]],[1593768184,[181,80, 101]],[1593768185,[170,57, 113]],[1593768186,[207,115, 92]],[1593768187,[206,93, 113]],[1593768188,[243,122, 121]],[1593768189,[207,122, 85]],[1593768190,[224,132, 92]],[1593768191,[277,146, 131]],[1593768192,[319,182, 137]],[1593768193,[303,174, 129]],[1593768194,[266,160, 106]],[1593768195,[301,202, 99]],[1593768196,[300,172, 128]],[1593768197,[366,230, 136]],[1593768198,[319,191, 128]],[1593768199,[275,154, 121]],[1593768200,[278,132, 146]],[1593768201,[381,267, 114]],[1593768202,[382,259, 123]],[1593768203,[338,224, 114]],[1593768204,[319,213, 106]],[1593768205,[365,235, 130]],[1593768206,[413,285, 128]],[1593768207,[396,291, 105]],[1593768208,[371,259, 112]],[1593768209,[347,225, 122]],[1593768210,[379,229, 150]],[1593768211,[349,236, 113]],[1593768212,[324,202, 122]],[1593768213,[261,171, 90]],[1593768214,[199,137, 62]],[1593768215,[283,216, 67]],[1593768216,[302,237, 65]],[1593768217,[363,289, 74]],[1593768218,[331,230, 101]],[1593768219,[267,211, 56]],[1593768220,[272,175, 97]],[1593768221,[292,243, 49]],[1593768222,[310,229, 81]],[1593768223,[277,198, 79]],[1593768224,[192,150, 42]],[1593768225,[245,236, 9]],[1593768226,[265,251, 14]],[1593768227,[400,376, 24]],[1593768228,[551,515, 36]],[1593768229,[404,372, 32]],[1593768230,[458,401, 57]],[1593768231,[378,353, 25]],[1593768232,[403,389, 14]],[1593768233,[411,365, 46]],[1593768234,[250,234, 16]],[1593768235,[177,161, 16]],[1593768236,[218,168, 50]],[1593768237,[250,227, 23]],[1593768238,[306,260, 46]],[1593768239,[267,222, 45]],[1593768240,[307,250, 57]],[1593768241,[330,248, 82]],[1593768242,[277,252, 25]],[1593768243,[234,193, 41]],[1593768244,[161,118, 43]],[1593768245,[147,133, 14]],[1593768246,[268,199, 69]],[1593768247,[210,174, 36]],[1593768248,[201,169, 32]],[1593768249,[181,165, 16]],[1593768250,[206,183, 23]],[1593768251,[224,176, 48]],[1593768252,[257,232, 25]],[1593768253,[198,198, 0]],[1593768254,[205,169, 36]],[1593768255,[263,240, 23]],[1593768256,[155,139, 16]],[1593768257,[223,146, 77]],[1593768258,[159,145, 14]],[1593768259,[153,114, 39]],[1593768260,[165,147, 18]],[1593768261,[185,162, 23]],[1593768262,[240,176, 64]],[1593768263,[148,134, 14]],[1593768264,[176,112, 64]],[1593768265,[121,89, 32]],[1593768266,[160,121, 39]],[1593768267,[194,164, 30]],[1593768268,[178,110, 68]],[1593768269,[89,73, 16]],[1593768270,[188,122, 66]],[1593768271,[177,127, 50]],[1593768272,[179,163, 16]],[1593768273,[189,139, 50]],[1593768274,[210,119, 91]],[1593768275,[148,98, 50]],[1593768276,[137,89, 48]],[1593768277,[169,130, 39]],[1593768278,[155,130, 25]],[1593768279,[132,73, 59]],[1593768280,[140,95, 45]],[1593768281,[174,120, 54]],[1593768282,[84,50, 34]],[1593768283,[174,92, 82]],[1593768284,[123,53, 70]],[1593768285,[145,61, 84]],[1593768286,[111,68, 43]],[1593768287,[158,87, 71]],[1593768288,[124,63, 61]],[1593768289,[89,55, 34]],[1593768290,[118,77, 41]],[1593768291,[96,55, 41]],[1593768292,[83,40, 43]],[1593768293,[139,71, 68]],[1593768294,[76,35, 41]],[1593768295,[72,54, 18]],[1593768296,[100,47, 53]],[1593768297,[110,67, 43]],[1593768298,[97,37, 60]],[1593768299,[83,22, 61]],[1593768300,[65,40, 25]],[1593768301,[79,40, 39]],[1593768302,[74,21, 53]],[1593768303,[70,29, 41]],[1593768304,[48,20, 28]],[1593768305,[40,4, 36]],[1593768306,[26,26, 0]],[1593768307,[57,29, 28]],[1593768308,[62,23, 39]],[1593768309,[69,26, 43]],[1593768310,[29,13, 16]],[1593768311,[48,18, 30]],[1593768312,[35,19, 16]],[1593768313,[60,21, 39]],[1593768314,[35,12, 23]],[1593768315,[34,16, 18]],[1593768316,[30,7, 23]],[1593768317,[10,10, 0]],[1593768318,[16,9, 7]],[1593768319,[30,16, 14]],[1593768320,[23,2, 21]],[1593768321,[7,7, 0]],[1593768322,[11,4, 7]],[1593768323,[17,3, 14]],[1593768324,[10,3, 7]],[1593768325,[3,3, 0]],[1593768326,[2,2, 0]],[1593768327,[17,10, 7]],[1593768328,[2,2, 0]],[1593768329,[19,5, 14]],[1593768330,[14,7, 7]],[1593768331,[30,9, 21]],[1593768332,[37,9, 28]],[1593768333,[29,8, 21]],[1593768334,[16,16, 0]],[1593768335,[44,9, 35]],[1593768336,[39,4, 35]],[1593768337,[14,7, 7]],[1593768338,[22,8, 14]],[1593768339,[16,9, 7]],[1593768340,[4,4, 0]],[1593768341,[11,4, 7]],[1593768342,[3,3, 0]],[1593768343,[29,8, 21]],[1593768344,[10,3, 7]],[1593768345,[4,4, 0]],[1593768346,[13,6, 7]],[1593768347,[9,2, 7]],[1593768348,[6,6, 0]],[1593768349,[10,3, 7]],[1593768350,[26,5, 21]],[1593768351,[7,7, 0]],[1593768352,[10,3, 7]],[1593768353,[23,9, 14]],[1593768354,[25,11, 14]],[1593768355,[39,11, 28]],[1593768356,[24,10, 14]],[1593768357,[19,5, 14]],[1593768358,[19,12, 7]],[1593768359,[26,5, 21]],[1593768360,[33,12, 21]],[1593768361,[42,7, 35]],[1593768362,[27,6, 21]],[1593768363,[37,9, 28]],[1593768364,[25,4, 21]],[1593768365,[29,8, 21]],[1593768366,[13,6, 7]],[1593768367,[18,11, 7]],[1593768368,[37,9, 28]],[1593768369,[24,10, 14]],[1593768370,[9,9, 0]],[1593768371,[21,7, 14]],[1593768372,[4,4, 0]],[1593768373,[7,7, 0]],[1593768374,[9,2, 7]],[1593768375,[14,7, 7]],[1593768376,[10,3, 7]],[1593768377,[21,7, 14]],[1593768378,[21,7, 14]],[1593768379,[21,7, 14]],[1593768380,[13,6, 7]],[1593768381,[17,3, 14]],[1593768382,[11,4, 7]],[1593768383,[4,4, 0]],[1593768384,[26,5, 21]],[1593768385,[1,1, 0]],[1593768386,[0,0, 0]],[1593768387,[0,0, 0]],[1593768388,[0,0, 0]],[1593768389,[0,0, 0]],[1593768390,[0,0, 0]],[1593768391,[0,0, 0]],[1593768392,[0,0, 0]],[1593768393,[1,1, 0]],[1593768394,[10,3, 7]]]);
+
+var requestsChart = new Highcharts.StockChart({
+  chart: {
+    renderTo: 'container_responses',
+    zoomType: 'x'
+  },
+  credits: { enabled: false },
+  legend: {
+    enabled: true,
+    floating: true,
+    itemDistance: 10,
+    y: -285,
+    borderWidth: 0,
+    itemStyle: { fontWeight: "normal" }
+  },
+  title: { text: 'A title to let highcharts reserve the place for the title set later' },
+  rangeSelector: {
+    buttonSpacing: 0,
+    buttonTheme: {
+      fill: 'LightGrey',
+      padding: 1,
+      stroke: 'Black',
+      'stroke-width': 0.25,
+      style: {
+        color: 'Black',
+        fontWeight: 'bold',
+      },
+      states: {
+        stroke: 'Black',
+        'stroke-width': 0.25,
+        hover: {
+          fill: 'DarkGrey',
+          style: { color: 'black' }
+         },
+         select: {
+          fill: 'DarkOrange',
+          style: { color: 'white' }
+        }
+      }
+    },
+    buttons : [
+      {
+        type : 'minute',
+        count : 1,
+        text : '1m'
+      }, {
+        type : 'minute',
+        count : 10,
+        text : '10m'
+      }, {
+        type : 'hour',
+        count : 1,
+        text : '1h'
+      }, {
+        type : 'all',
+        count : 1,
+        text : 'All'
+      }
+    ],
+    selected : 3,
+    inputEnabled : false
+  },
+  plotOptions: {
+    series: {
+      dataGrouping: { enabled: false }
+    },
+    area: {
+      stacking: 'normal'
+    }
+  },
+  xAxis: {
+    type: 'datetime',
+    ordinal: false,
+    maxZoom: 10000 // three days
+  },
+  yAxis:[
+    {
+      min: 0,
+      title: {
+        text: 'Number of responses',
+        style: { color: '#4572A7' }
+      },
+      opposite: false
+    }, {
+      min: 0,
+      title: {
+        text: 'Active Users',
+        style: { color: '#FF9D00' }
+      },
+      opposite: true
+    }
+  ],
+  series: [
+    {
+color: '#4572A7',
+name: 'All',
+data: container_responses[0],
+tooltip: { yDecimals: 0, ySuffix: '', valueDecimals: 0 }
+},
+{
+color: '#FF0000',
+name: 'KO',
+data: container_responses[1],
+tooltip: { yDecimals: 0, ySuffix: '', valueDecimals: 0 }
+,type: 'area'},
+{
+color: '#A0B228',
+name: 'OK',
+data: container_responses[2],
+tooltip: { yDecimals: 0, ySuffix: '', valueDecimals: 0 }
+,type: 'area'},
+    allUsersData,
+{
+  
+type: 'pie',
+name: 'Distribution',
+data: [
+  {name: 'OK', y: 11139.0, color: '#A0B228'},{name: 'KO', y: 22199.0, color: '#FF0000'}
+],
+center: [775, -40],
+size: 70,
+showInLegend: false,
+dataLabels: { enabled: false },
+dataGrouping: { enabled: false }
+
+}
+
+  ]
+});
+
+requestsChart.setTitle({
+  text: '<span class="chart_title">Number of responses per second</span>',
+  useHTML: true
+});
+
+    });
+</script>
+</body>
+</html>

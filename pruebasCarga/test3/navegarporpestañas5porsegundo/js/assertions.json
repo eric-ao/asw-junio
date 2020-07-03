@@ -1,0 +1,10 @@
+{
+  "simulation": "NavegarPorPestañas5PorSegundo",
+  "simulationId": "navegarporpestan-as5porsegundo",
+  "start": 1593768149550,
+  "description": "",
+  "scenarios": ["RecordedSimulation"],
+  "assertions": [
+
+  ]
+}

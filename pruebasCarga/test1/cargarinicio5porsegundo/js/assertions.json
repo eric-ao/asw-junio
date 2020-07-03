@@ -1,0 +1,10 @@
+{
+  "simulation": "CargarInicio5PorSegundo",
+  "simulationId": "cargarinicio5porsegundo",
+  "start": 1593753877790,
+  "description": "",
+  "scenarios": ["RecordedSimulation"],
+  "assertions": [
+
+  ]
+}

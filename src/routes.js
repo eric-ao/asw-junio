@@ -23,32 +23,32 @@ import {
 const privateRoutes = [
   {
     id: 'home',
-    path: '/viade_es4b/',
+    path: '/asw-junio/',
     component: Welcome
   },
   {
     id: 'welcome',
-    path: '/viade_es4b/welcome',
+    path: '/asw-junio/welcome',
     component: Welcome
   },
   {
     id: 'profile',
-    path: '/viade_es4b/profile',
+    path: '/asw-junio/profile',
     component: Profile
   },
   {
     id: 'map',
-    path: '/viade_es4b/map',
+    path: '/asw-junio/map',
     component: MapComponent
   },
   {
     id: 'friends',
-    path: '/viade_es4b/friends',
+    path: '/asw-junio/friends',
     component: MisAmigosComponent
   },
   {
     id: 'ayuda',
-    path: '/viade_es4b/ayuda',
+    path: '/asw-junio/ayuda',
     component: AyudaComponent
   }
 ];
@@ -57,14 +57,14 @@ const Routes = () => (
   <Router>
     <Fragment>
       <Switch>
-        <NotLoggedInLayout component={Login} path="/viade_es4b/login" exact />
-        <NotLoggedInLayout component={Register} path="/viade_es4b/register" exact />
-        <NotLoggedInLayout path="/viade_es4b/register/success" component={RegistrationSuccess} exact />
-        <PublicLayout path="/viade_es4b/404" component={PageNotFound} exact />
-        <Redirect from="/" to="/viade_es4b/welcome" exact />
-        <PrivateLayout path="/viade_es4b/" routes={privateRoutes} />
-        <Redirect from="/login" to="/viade_es4b/login" exact />
-        <Redirect from= "/viade_es4b/#" to="/viade_es4b/welcome" exact/>
+        <NotLoggedInLayout component={Login} path="/asw-junio/login" exact />
+        <NotLoggedInLayout component={Register} path="/asw-junio/register" exact />
+        <NotLoggedInLayout path="/asw-junio/register/success" component={RegistrationSuccess} exact />
+        <PublicLayout path="/asw-junio/404" component={PageNotFound} exact />
+        <Redirect from="/" to="/asw-junio/welcome" exact />
+        <PrivateLayout path="/asw-junio/" routes={privateRoutes} />
+        <Redirect from="/login" to="/asw-junio/login" exact />
+        <Redirect from= "/asw-junio/#" to="/asw-junio/welcome" exact/>
        
         
       </Switch>

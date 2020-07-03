@@ -4,7 +4,6 @@ import './ayuda.css';
 
 export default class AyudaComponent extends Component {
     render() {
-        //
         return (
             <div className="ayuda-Component">
                 <h1>Guía de la aplicación</h1>

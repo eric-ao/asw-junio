@@ -74,7 +74,7 @@ class NavBarProfile extends Component<Props> {
   }
 
   // eslint-disable-next-line react/destructuring-assignment
-  profileRedirect = () => this.props.history.push('/viade_es4b/profile');
+  profileRedirect = () => this.props.history.push('/asw-junio/profile');
 
   // eslint-disable-next-line react/destructuring-assignment
   formModelRenderRedirect = () => this.props.history.push('/formModel/renderer');
@@ -90,7 +90,7 @@ class NavBarProfile extends Component<Props> {
       // Remove localStorage
       localStorage.removeItem('solid-auth-client');
       // Redirect to login page
-      window.location = '/viade_es4b/';
+      window.location = '/asw-junio/';
     } catch (error) {
       errorToaster(error.message, 'Error');
     }

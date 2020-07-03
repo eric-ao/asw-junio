@@ -60,7 +60,7 @@ const PrivateLayout = ({ routes, webId, location, history, ...rest }) => {
                     />
                   );
                 })}
-                <Redirect to="/viade_es4b/404" />
+                <Redirect to="/asw-junio/404" />
               </Switch>
             </Content>
           )}

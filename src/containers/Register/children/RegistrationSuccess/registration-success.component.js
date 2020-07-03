@@ -29,7 +29,7 @@ class RegistrationSuccess extends Component<Props, State> {
   redirect = async () => {
     const { history } = this.props;
     await clearInterval(this.interval);
-    history.push('/viade_es4b/login');
+    history.push('/asw-junio/login');
   };
 
   countDown = () => {

@@ -14,7 +14,7 @@ export default class AyudaComponent extends Component {
                 <p>Aquí dejo un pequeño video que muestra cómo crear una ruta con varios puntos.</p>
 
                 <div style={{ margin: 30 }}>
-                    <video src="/img/GuardarRuta.mp4" controls width="500" height="400" className="video1"></video>
+                    <video src="/asw-junio/img/GuardarRuta.mp4" controls width="500" height="400" className="video1"></video>
                 </div>
 
                 <h2>Cómo visualizar tus rutas y las compartidas por tus amigos</h2>
@@ -23,7 +23,7 @@ export default class AyudaComponent extends Component {
                 <p>Aquí dejo un pequeño video que muestra cómo visualizar una ruta.</p>
 
                 <div>
-                    <video src="/img/VisualizarRuta.mp4" controls width="500" height="400" className="video1"></video>
+                    <video src="/asw-junio/img/VisualizarRuta.mp4" controls width="500" height="400" className="video1"></video>
                 </div>
 
                 <h2>Cómo compartir tus rutas con tus amigos</h2>
@@ -32,7 +32,7 @@ export default class AyudaComponent extends Component {
                 <p>Aquí dejo un pequeño video que muestra cómo compartir una ruta.</p>
 
                 <div>
-                    <video src="/img/CompartirRuta.mp4" controls width="500" height="400" className="video1"></video>
+                    <video src="/asw-junio/img/CompartirRuta.mp4" controls width="500" height="400" className="video1"></video>
                 </div>
 
                 <h2>Cómo eliminar tus rutas guardadas</h2>
@@ -41,7 +41,7 @@ export default class AyudaComponent extends Component {
                 <p> Aquí esta un pequeño video que muestra cómo eliminar las rutas.</p>
 
                 <div>
-                    <video src="/img/videoEliminarRuta_Trim.mp4" controls width="500" height="400" className="video2"></video>
+                    <video src="/asw-junio/img/videoEliminarRuta_Trim.mp4" controls width="500" height="400" className="video2"></video>
                 </div>
             </div>
         );

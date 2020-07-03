@@ -7,7 +7,7 @@ export const ProfileWrapper = styled.section`
   justify-content: center;
    background-image:
     linear-gradient(rgba(255, 46, 0, 0.5), rgba(225, 224, 0, 0.2)), 
-    url('/img/concentric-hex-pattern_2x.png');
+    url('/asw-junio/img/concentric-hex-pattern_2x.png');
   padding: 60px 0;
 `;
 export const ProfileContainer = styled.div`

@@ -187,37 +187,37 @@ class RutasSimulation25porSegundo extends Simulation {
 			.get(uri2 + "?t=1587660325992")
 			.headers(headers_10),
             http("request_11")
-			.get(uri3 + "/img/logoNav.jpg")
+			.get(uri3 + "/asw-junio/img/logoNav.jpg")
 			.headers(headers_11),
             http("request_12")
-			.get(uri3 + "/img/icon/apps.svg")
+			.get(uri3 + "/asw-junio/img/icon/apps.svg")
 			.headers(headers_11),
             http("request_13")
-			.get(uri3 + "/img/people.svg")
+			.get(uri3 + "/asw-junio/img/people.svg")
 			.headers(headers_11),
             http("request_14")
-			.get(uri3 + "/img/mapa.jpg")
+			.get(uri3 + "/asw-junio/img/mapa.jpg")
 			.headers(headers_11),
             http("request_15")
-			.get(uri3 + "/img/amigos.png")
+			.get(uri3 + "/asw-junio/img/amigos.png")
 			.headers(headers_11),
             http("request_16")
-			.get(uri3 + "/img/LogoAyuda.jpg")
+			.get(uri3 + "/asw-junio/img/LogoAyuda.jpg")
 			.headers(headers_11),
             http("request_17")
-			.get(uri3 + "/img/icon/empty-profile.svg")
+			.get(uri3 + "/asw-junio/img/icon/empty-profile.svg")
 			.headers(headers_11),
             http("request_18")
-			.get(uri3 + "/img/bars-nav.svg")
+			.get(uri3 + "/asw-junio/img/bars-nav.svg")
 			.headers(headers_11),
             http("request_19")
-			.get(uri3 + "/img/monta%C3%B1a2.jpg")
+			.get(uri3 + "/asw-junio/img/monta%C3%B1a2.jpg")
 			.headers(headers_11),
             http("request_20")
 			.get(uri3 + "/static/media/es.50623e6a.svg")
 			.headers(headers_11),
             http("request_21")
-			.get(uri3 + "/img/concentric-hex-pattern_2x.png")
+			.get(uri3 + "/asw-junio/img/concentric-hex-pattern_2x.png")
 			.headers(headers_11),
             http("request_22")
 			.get(uri3 + "/manifest.json")

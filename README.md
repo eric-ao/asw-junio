@@ -9,6 +9,10 @@ Grado de Ingeniería Informática de Software por la Universidad de Oviedo.
 
 Autor: Eric Andrés Obaya, UO258623.
 
+Enlace a la aplicación: https://eric-ao.github.io/asw-junio/
+
+Enlace a la documentación: https://eric-ao.github.io/asw-junio/docs/index.html
+
 ## Características de la aplicación y mejoras.
 
 La aplicación nos permite iniciar sesión con nuestra cuenta de SOLID Community, o en caso de no tenerla nos permitirá registrarnos.

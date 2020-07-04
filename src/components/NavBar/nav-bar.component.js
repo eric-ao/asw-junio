@@ -58,7 +58,7 @@ const NavBar = (props: Props) => {
       <section className="header-wrap">
         <div className="logo-block">
           <Link to="/asw-junio/welcome">
-            <img src="/asw-junio/img/logoNav.jpg" alt="logoNav" />
+            <img src="/img/logoNav.jpg" alt="logoNav" />
           </Link>
         </div>
 

@@ -15,7 +15,7 @@ type ProviderEntity = {
         {
           id: 'inrupt',
           label: 'Inrupt',
-          image: '/asw-junio/img/inrupt.svg',
+          image: '/img/inrupt.svg',
           value: 'https://inrupt.net/auth',
           registerLink: 'https://inrupt.net/register',
           description: 'Lorem ipsum dolor sit amet non ipsom dolor'

@@ -48,6 +48,7 @@ export class MapComponent extends Component {
         this.handleClear = this.handleClear.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
         this.deletePoint = this.deletePoint.bind(this);
+        this.nueva = this.nueva.bind(this);
 
         this.handleChangeName = this.handleChangeName.bind(this);
         this.handleChangeCategory = this.handleChangeCategory.bind(this);
@@ -105,7 +106,6 @@ export class MapComponent extends Component {
             });
         }
     }
-
     async recuperarRutasCompartidas() {
         if (this.state.url && !this.state.loadCompartidas) {
             this.setState(prevState => ({
@@ -134,7 +134,6 @@ export class MapComponent extends Component {
             }
         }
     }
-
     async setUrlFromStorage() {
         if (this.props.webId && !this.state.url) {
             const storageRoot = await ldflex[this.props.webId]["pim:storage"];
@@ -150,11 +149,10 @@ export class MapComponent extends Component {
             }
         }
     }
-
-    //Cargar el json
     handleLoad() {
         this.setUrlFromStorage();
     }
+
 
     // Guarda los puntos en el POD
     async updateLocations(rutas) {
@@ -171,16 +169,35 @@ export class MapComponent extends Component {
         }));
     }
 
+
     //BORRA TODAS LAS RUTAS DEL USUARIO.
     async handleClear() {
-        await this.updateLocations([{
-            locations: [],
-            nombre: '',
-            descripcion: '',
-            categoria: ''
-        }]);
-    }
+        this.setState(prevState => {
 
+            if(this.state.rutas.length > 0) {
+                for (let i = 0; i < this.state.rutas.length; i++) {
+                    if(this.state.rutas[i].locations === this.state.selectedRoute.locations) {
+                        this.state.selectedRoute = [{
+                            locations: [],
+                            nombre: '',
+                            descripcion: '',
+                            categoria: ''
+                        }];
+                    }
+                }
+            }
+
+            this.updateLocations([{
+                locations: [],
+                nombre: '',
+                descripcion: '',
+                categoria: ''
+            }]);
+            return {
+                ...prevState
+            };
+        });
+    }
     //BORRA LA RUTA SELECCIONADA.
     async handleDelete() {
         let rutas;
@@ -189,17 +206,25 @@ export class MapComponent extends Component {
             prevState.rutas = [];
             for(let i=0; i<aux.length; i++) {
                 if(this.state.selectedRoute !== aux[i])
-                    prevState.rutas.push(aux[i])
+                    prevState.rutas.push(aux[i]);
+                else {
+                    this.state.selectedRoute = [{
+                        locations: [],
+                        nombre: '',
+                        descripcion: '',
+                        categoria: ''
+                    }];
+                }
             }
 
             rutas = prevState.rutas;
+
             this.updateLocations(rutas);
             return {
                 ...prevState
             };
         });
     }
-
     //SE EJECUTA AL DARLE AL BOTON DE GUARDAR RUTA.
     async handleSave() {
         let rutas = [...this.state.rutas, {
@@ -210,10 +235,9 @@ export class MapComponent extends Component {
         }];
         await this.updateLocations(rutas);
     }
-
     //BORRA EL ÚLTIMO PUNTO MARCADO (antes de guardar).
     async deletePoint() {
-        this.setState(prevState => {
+        await this.setState(prevState => {
             this.getLastRoute(prevState).locations.pop();
             this.updateLocations(prevState.rutas);
             return {
@@ -221,8 +245,27 @@ export class MapComponent extends Component {
             };
         });
     }
+    //PREPARA EL MAPA PARA CREAR UNA RUTA DE CERO.
+    async nueva() {
+        this.state.selectedRoute = [{
+            locations: [],
+            nombre: '',
+            descripcion: '',
+            categoria: ''
+        }];
 
-    //Añadir los marcadores
+        this.state.rutas.pop();
+        let rutas = [...this.state.rutas, {
+            locations: [],
+            nombre: '',
+            descripcion: '',
+            categoria: ''
+        }];
+        await this.updateLocations(rutas);
+    }
+
+
+    // RESPONDE AL EVENTO DE HACER CLICK EN EL MAPA.
     handleMapClick = (ref, map, ev) => {
         const location = ev.latLng;
 
@@ -243,14 +286,13 @@ export class MapComponent extends Component {
                 ...prevState
             };
         });
-        map.panTo(punto);
     };
-
+    // DEVUELVE LA ULTIMA RUTA.
     getLastRoute(state = undefined) {
-        var prevState = state ? state : this.state;
+        let prevState = state ? state : this.state;
         return prevState.rutas[prevState.rutas.length - 1];
     }
-
+    // AÑADE UNA IMAGEN AL PUNTO SELECCIONADO.
     addImageToSelectedPoint(image) {
         this.setState(prevState => {
             let selectedPoint = this.state.selectedPoint;
@@ -268,6 +310,7 @@ export class MapComponent extends Component {
     }
 
 
+    // CAMBIOS EN EL FORMULARIO DE NUEVA RUTA.
     async handleChangeName(e) {
         let value = e.target.value;
         this.setState(prevState => {
@@ -308,6 +351,7 @@ export class MapComponent extends Component {
         });
     }
 
+    // CAMBIOS EN EL FORMULARIO DE BUSQUEDA.
     async handleSearchCategory(e) {
         let value = e.value;
         this.setState(prevState => {
@@ -440,32 +484,61 @@ export class MapComponent extends Component {
 
         let fragment;
 
+        //MUESTRA TODAS LAS RUTAS SI NO SE HA REALIZADO NINGUNA BUSQUEDA
         if(!this.state.hayBusqueda) {
             fragment = [...this.state.rutas.slice(0, -1), ...this.state.rutasCompartidas].map((route, i) => (
                 <React.Fragment key={`route_${i}`}>
                     <dt>
                         <a href="/#" onClick={(e) => {
                             e.preventDefault();
-                            this.setState((prevState) => ({
-                                ...prevState,
-                                selectedRoute: route
-                            }))
+                            if(this.state.selectedRoute !== route) {
+                                this.setState((prevState) => ({
+                                    ...prevState,
+                                    selectedRoute: route
+                                }))
+                            }
+                            else {
+                                this.setState((prevState) => ({
+                                    ...prevState,
+                                    selectedRoute: [{
+                                        locations: [],
+                                        nombre: '',
+                                        descripcion: '',
+                                        categoria: ''
+                                    }]
+                                }));
+                            }
                         }}>
                             {route.nombre}
                         </a>
                     </dt>
                     <dd>{route.descripcion}</dd>
                 </React.Fragment>));
-        } else {
+        }
+        //MUESTRA SOLO LAS RUTAS RESULTADO DE LA BUSQUEDA.
+        else {
             fragment = this.state.rutasBuscadas.map((route, i) => (
                 <React.Fragment key={`route_${i}`}>
                     <dt>
                         <a href="/#" onClick={(e) => {
                             e.preventDefault();
-                            this.setState((prevState) => ({
-                                ...prevState,
-                                selectedRoute: route
-                            }))
+                            if(this.state.selectedRoute !== route) {
+                                this.setState((prevState) => ({
+                                    ...prevState,
+                                    selectedRoute: route
+                                }))
+                            }
+                            else {
+                                this.setState((prevState) => ({
+                                    ...prevState,
+                                    selectedRoute: [{
+                                        locations: [],
+                                        nombre: '',
+                                        descripcion: '',
+                                        categoria: ''
+                                    }]
+                                }));
+                            }
                         }}>
                             {route.nombre}
                         </a>
@@ -474,6 +547,16 @@ export class MapComponent extends Component {
                 </React.Fragment>
             ))
         }
+
+        let creatingRoutePolyline =
+            <Polyline
+                path={this.getLastRoute().locations}
+                options={{
+                    strokeColor: "#ea4335",
+                    strokeOpacity: 1,
+                    strokeWeight: 2,}}
+            />;
+
 
         return (
             <div className="map-container">
@@ -517,10 +600,11 @@ export class MapComponent extends Component {
 
                 {/* PARTE INTERMEDIA DE LA PÁGINA DE MAPA */}
                 <div className="botones">
-                    <button onClick={this.handleSave} className="boton"> Guardar ruta </button>
-                    <button onClick={this.handleClear} className="boton"> Borrar todas mis rutas</button>
-                    <button onClick={this.handleDelete} className="boton"> Borrar ruta</button>
+                    <button onClick={this.nueva} className="boton"> Nueva</button>
                     <button onClick={this.deletePoint} className="boton"> Borrar último punto</button>
+                    <button onClick={this.handleSave} className="boton"> Guardar ruta </button>
+                    <button onClick={this.handleDelete} className="boton"> Borrar ruta</button>
+                    <button onClick={this.handleClear} className="boton"> Borrar todas mis rutas</button>
                 </div>
                 {/* PARTE INTERMEDIA DE LA PÁGINA DE MAPA */}
 
@@ -541,28 +625,8 @@ export class MapComponent extends Component {
                         fullscreenControl={false}
                         styles={this.state.modo}>
 
-                        {/* LINEA DE RUTAS CREADAS */}
-                        <Polyline
-                            path={this.state.selectedRoute.locations}
-                            options={{
-                                strokeColor: "#ffb01f",
-                                strokeOpacity: 1,
-                                strokeWeight: 2,}}/>
-                        {/* LINEA AL CREAR RUTAS */}
-                        <Polyline
-                            path={this.getLastRoute().locations}
-                            options={{
-                                strokeColor: "#ea4335",
-                                strokeOpacity: 1,
-                                strokeWeight: 2,}}/>
-
-                        {this.state.selectedRoute.locations.map((location, i) =>
-                            <Marker key={`marker1_${i}`} position={location}
-                                    onClick={(props, marker) => this.setState(prevState => ({
-                                        ...prevState,
-                                        selectedPoint: location
-                                    }))}/>
-                        )}
+                        {/* LINEAS Y PUNTOS AL CREAR RUTAS */}
+                        {creatingRoutePolyline}
                         {this.getLastRoute().locations.map((location, i) =>
                             <Marker key={`marker1_${i}`} position={location}
                                     onClick={(props, marker) => this.setState(prevState => ({
@@ -570,6 +634,36 @@ export class MapComponent extends Component {
                                         selectedPoint: location
                                     }))}/>
                         )}
+                        {/* LINEAS Y PUNTOS AL CREAR RUTAS */}
+
+
+
+                        {/* MUESTRA LOS MARCADORES Y LA LINEA AL SELECCIONAR UNA RUTA, SI NO HAY RUTA SELECCIONADA, NO HACE NADA */}
+                        {
+                            this.state.selectedRoute.locations !== undefined ?
+                                <Polyline
+                                    path={this.state.selectedRoute.locations}
+                                    options={{
+                                        strokeColor: "#ffb01f",
+                                        strokeOpacity: 1,
+                                        strokeWeight: 2,
+                                    }}/>
+                                : null
+                        }
+                        {
+                            this.state.selectedRoute.locations !== undefined ?
+                            this.state.selectedRoute.locations.map((location, i) =>
+                                <Marker key={`marker1_${i}`} position={location}
+                                        onClick={(props, marker) => this.setState(prevState => ({
+                                            ...prevState,
+                                            selectedPoint: location
+                                        }))}/>)
+                                : null
+
+                        }
+                        {/* MUESTRA LOS MARCADORES Y LA LINEA AL SELECCIONAR UNA RUTA, SI NO HAY RUTA SELECCIONADA, NO HACE NADA */}
+
+
 
                         {/* GLOBO QUE SALE AL PULSAR UN MARCADOR Y QUE CONTIENE LAS IMAGENES */}
                         {
@@ -583,11 +677,15 @@ export class MapComponent extends Component {
                                 </div>
                             </InfoWindow>
                         }
+                        {/* GLOBO QUE SALE AL PULSAR UN MARCADOR Y QUE CONTIENE LAS IMAGENES */}
 
+
+
+                        {/* POSIBILIDAD DE AÑADIR IMAGENES A LOS PUNTOS */}
                         {
                             this.state.selectedPoint && (<ImageComponent url={this.state.url} addImage={this.addImageToSelectedPoint.bind(this)}/>)
                         }
-
+                        {/* POSIBILIDAD DE AÑADIR IMAGENES A LOS PUNTOS */}
                     </Map>
                 </div>
                 {/* PARTE DEL MAPA */}

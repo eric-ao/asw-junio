@@ -21,11 +21,16 @@
 
 .rutas {
     display: flex;
+    position: relative;
+}
+
+.busqueda {
+    display: flex;
 }
 
 .botones {
     margin-left: 55px;
-    margin-bottom: 20px;
+    margin-top: -260px;
 }
 
 .dropdown {
@@ -33,12 +38,55 @@
     display: inline-block;
 }
 
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    padding: 12px 16px;
-    z-index: 1;
+.elemB1 {
+    margin-bottom: 10px;
+    width: 450px;
+    height: 40px;
+}
+
+.elemB2 {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 450px;
+}
+
+.lista {
+    overflow-y: scroll;
+    max-height: 200px;
+}
+
+.botonB {
+    width: 450px;
+    height: 50px;
+    margin-bottom: 35px;
+    background-color: #EA7736;
+    opacity: 0.8;
+    color: white;
+    font-size: 16px;
+}
+
+.parteSuperior {
+    position: relative;
+    height: 420px;
+}
+
+.botonB:hover {
+    background-color: #fff;
+    border-color: #EA7736;
+    color: #EA7736;
+}
+
+.botonRuta {
+    width: 250px;
+    height: 25px;
+    background-color: #ff914b;
+    opacity: 0.8;
+    color: white;
+    font-size: 12px;
+}
+
+.desc {
+    width: 400px;
+    white-space: pre-wrap;
+    word-break: break-word;
 }

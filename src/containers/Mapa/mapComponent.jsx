@@ -488,8 +488,8 @@ export class MapComponent extends Component {
         if(!this.state.hayBusqueda) {
             fragment = [...this.state.rutas.slice(0, -1), ...this.state.rutasCompartidas].map((route, i) => (
                 <React.Fragment key={`route_${i}`}>
-                    <dt>
-                        <a href="/#" onClick={(e) => {
+                    <dt >
+                        <button className="botonRuta" onClick={(e) => {
                             e.preventDefault();
                             if(this.state.selectedRoute !== route) {
                                 this.setState((prevState) => ({
@@ -510,17 +510,20 @@ export class MapComponent extends Component {
                             }
                         }}>
                             {route.nombre}
-                        </a>
+                        </button>
                     </dt>
-                    <dd>{route.descripcion}</dd>
+                    {
+                        this.state.selectedRoute === route ?
+                            <p className="desc">{route.descripcion}</p> : null
+                    }
                 </React.Fragment>));
         }
         //MUESTRA SOLO LAS RUTAS RESULTADO DE LA BUSQUEDA.
         else {
             fragment = this.state.rutasBuscadas.map((route, i) => (
-                <React.Fragment key={`route_${i}`}>
-                    <dt>
-                        <a href="/#" onClick={(e) => {
+                <React.Fragment key={`route_${i}`} className="lista">
+                    <dt >
+                        <button className="botonRuta" onClick={(e) => {
                             e.preventDefault();
                             if(this.state.selectedRoute !== route) {
                                 this.setState((prevState) => ({
@@ -541,9 +544,12 @@ export class MapComponent extends Component {
                             }
                         }}>
                             {route.nombre}
-                        </a>
+                        </button>
                     </dt>
-                    <dd>{route.descripcion}</dd>
+                    {
+                        this.state.selectedRoute === route ?
+                            <p className="desc">{route.descripcion}</p> : null
+                    }
                 </React.Fragment>
             ))
         }
@@ -560,58 +566,69 @@ export class MapComponent extends Component {
 
         return (
             <div className="map-container">
-                {/* PARTE SUPERIOR DE LA PÁGINA DE MAPA */}
-                <div className="rutas">
-                    {/* FORMULARIO PARA CREAR NUEVA RUTA */}
-                    <div>{
-                        this.state.url ? <>
-                                <form className="form">
-                                    <label className="etiqueta"> Nombre:
-                                        <input type="text" value={this.getLastRoute().nombre} onChange={this.handleChangeName}/>
-                                    </label>
-                                    <label className="etiqueta">Descripción:
-                                        <input type="text" value={this.getLastRoute().descripcion} onChange={this.handleChangeDescription}/>
-                                    </label>
-                                    <label className="etiqueta"> Categoría:
-                                        <Dropdown options={categories} onChange={this.handleChangeCategory} value={this.getLastRoute().categoria} placeholder="Seleccione una..."/>
-                                    </label>
-                                </form>
-                            </> : <p>Cargando...</p>
-                    } </div>
-                    {/* FORMULARIO PARA CREAR NUEVA RUTA */}
+                <div className="parteSuperior">
+                    {/* PARTE SUPERIOR DE LA PÁGINA DE MAPA */}
+                    <div className="rutas">
+                        {/* FORMULARIO PARA CREAR NUEVA RUTA */}
+                        <div>{
+                            this.state.url ? <>
+                                    <form className="form">
+                                        <label className="etiqueta"> Nombre:
+                                            <input type="text" value={this.getLastRoute().nombre} onChange={this.handleChangeName}/>
+                                        </label>
+                                        <label className="etiqueta">Descripción:
+                                            <input type="text" value={this.getLastRoute().descripcion} onChange={this.handleChangeDescription}/>
+                                        </label>
+                                        <label className="etiqueta"> Categoría:
+                                            <Dropdown options={categories} onChange={this.handleChangeCategory} value={this.getLastRoute().categoria} placeholder="Seleccione una..."/>
+                                        </label>
+                                    </form>
+                                </> : <p>Cargando...</p>
+                        } </div>
+                        {/* FORMULARIO PARA CREAR NUEVA RUTA */}
 
 
 
-                    {/* MUESTRA LAS RUTAS A LA DERECHA */}
-                    <dl>
-                        <label className="etiqueta">Buscar</label>
-                        <div className="rutas">
-                            <input type="text" value={this.state.busqueda} onChange={this.handleSearchText}/>
-                            <Dropdown options={categoriesBusqueda} onChange={this.handleSearchCategory} value={this.state.categoriaBuscada} placeholder="Seleccione una..."/>
-                            <button onClick={this.handleSearch}> Buscar </button>
-                        </div>
-                            {fragment}
-                    </dl>
-                    {/* MUESTRA LAS RUTAS A LA DERECHA */}
+                        {/* MUESTRA LAS RUTAS A LA DERECHA */}
+                        <dl>
+                            <label className="etiqueta">Buscar</label>
+                            <div >
+                                <input className="elemB1" type="text" value={this.state.busqueda} onChange={this.handleSearchText}/>
+                                <Dropdown  options={categoriesBusqueda} onChange={this.handleSearchCategory} value={this.state.categoriaBuscada} placeholder="Seleccione una..."/>
+                                <button className="botonB" onClick={this.handleSearch}> Buscar </button>
+                            </div>
+                            <div className="lista">{fragment}</div>
+
+
+                        </dl>
+                        {/* MUESTRA LAS RUTAS A LA DERECHA */}
+                    </div>
+                    {/* PARTE SUPERIOR DE LA PÁGINA DE MAPA */}
+
+
+
+                    {/* PARTE INTERMEDIA DE LA PÁGINA DE MAPA */}
+                    <div className="botones">
+                        <button onClick={this.nueva} className="boton"> Nueva</button>
+                        {
+                            this.getLastRoute().locations.length > 0 ?
+                                <button onClick={this.deletePoint} className="boton"> Borrar último punto</button> : null
+                        }
+                        {
+                            this.getLastRoute().locations.length > 0 ?
+                            <button onClick={this.handleSave} className="boton"> Guardar ruta </button> : null
+                        }
+                        {
+                            this.state.selectedRoute.locations !== undefined && this.state.selectedRoute.locations.length !== 0 ?
+                            <button onClick={this.handleDelete} className="boton"> Borrar ruta</button> : null
+                        }
+                        <button onClick={this.handleClear} className="boton"> Borrar todas mis rutas</button>
+                    </div>
+                    {/* PARTE INTERMEDIA DE LA PÁGINA DE MAPA */}
                 </div>
-                {/* PARTE SUPERIOR DE LA PÁGINA DE MAPA */}
-
-
-
-                {/* PARTE INTERMEDIA DE LA PÁGINA DE MAPA */}
-                <div className="botones">
-                    <button onClick={this.nueva} className="boton"> Nueva</button>
-                    <button onClick={this.deletePoint} className="boton"> Borrar último punto</button>
-                    <button onClick={this.handleSave} className="boton"> Guardar ruta </button>
-                    <button onClick={this.handleDelete} className="boton"> Borrar ruta</button>
-                    <button onClick={this.handleClear} className="boton"> Borrar todas mis rutas</button>
-                </div>
-                {/* PARTE INTERMEDIA DE LA PÁGINA DE MAPA */}
-
-
 
                 {/* PARTE DEL MAPA */}
-                <div>
+                <div className="mapa">
                     <Map
                         google={this.props.google}
                         className={"map"}

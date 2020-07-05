@@ -227,13 +227,29 @@ export class MapComponent extends Component {
     }
     //SE EJECUTA AL DARLE AL BOTON DE GUARDAR RUTA.
     async handleSave() {
-        let rutas = [...this.state.rutas, {
-            locations: [],
-            nombre: '',
-            descripcion: '',
-            categoria: ''
-        }];
-        await this.updateLocations(rutas);
+        console.log(this.getLastRoute().nombre);
+        if(this.getLastRoute().nombre.trim() !== "" && this.getLastRoute().nombre !== undefined){
+            if(this.getLastRoute().descripcion.trim() !== "" && this.getLastRoute().descripcion !== undefined) {
+                if(this.getLastRoute().categoria !== "" && this.getLastRoute().categoria !== undefined) {
+                    let rutas = [...this.state.rutas, {
+                        locations: [],
+                        nombre: '',
+                        descripcion: '',
+                        categoria: ''
+                    }];
+                    await this.updateLocations(rutas);
+                }
+                else {
+                    alert ("Categoría no seleccionada")
+                }
+            }
+            else {
+                alert("Descripción vacía")
+            }
+        }
+        else {
+            alert("Nombre vacío")
+        }
     }
     //BORRA EL ÚLTIMO PUNTO MARCADO (antes de guardar).
     async deletePoint() {

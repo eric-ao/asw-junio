@@ -4,33 +4,33 @@
 export const NavigationItems = [
   {
     id: 'welcome',
-    icon: '/img/icon/apps.svg',
+    icon: '/asw-junio/img/icon/apps.svg',
     label: 'navBar.welcome',
     to: '/asw-junio/welcome'
   },
   {
     id: 'profile',
-    icon: '/img/people.svg',
+    icon: '/asw-junio/img/people.svg',
     label: 'navBar.profile',
     to: '/asw-junio/profile'
   },
   {
     id: 'map',
-    icon: '/img/mapa.jpg',
+    icon: '/asw-junio/img/mapa.jpg',
     label: 'navBar.map',
     to: '/asw-junio/map'
   }
   ,
   {
     id: 'friends',
-    icon: '/img/amigos.png',
+    icon: '/asw-junio/img/amigos.png',
     label: 'navBar.friends',
     to: '/asw-junio/friends'
   },
   
   {
     id: 'ayuda',
-    icon: '/img/LogoAyuda.jpg',
+    icon: '/asw-junio/img/LogoAyuda.jpg',
     label: 'Ayuda',
     to: '/asw-junio/ayuda'
   }

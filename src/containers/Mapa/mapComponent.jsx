@@ -6,7 +6,7 @@ import ldflex from "@solid/query-ldflex";
 import {GoogleApiWrapper, InfoWindow, Map, Marker, Polyline} from "google-maps-react";
 import ImageComponent from '../Imagen/imagen.component';
 import './mapComponent.css';
-import {estiloCustomDia, estiloCustomNoche} from './mapComponent.style';
+import {estiloCustomDia} from './mapComponent.style';
 import Dropdown from 'react-dropdown'
 import 'react-dropdown/style.css'
 

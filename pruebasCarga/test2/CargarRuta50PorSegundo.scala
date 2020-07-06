@@ -149,7 +149,7 @@ class CargarRuta50PorSegundo extends Simulation {
 			.headers(headers_7)
 			.check(bodyBytes.is(RawFileBody("/recordedsimulation/0007_response.json"))),
             http("request_8")
-			.get("/img/mountain2.jpg")
+			.get("/asw-junio/img/mountain2.jpg")
 			.headers(headers_8)
 			.check(bodyBytes.is(RawFileBody("/recordedsimulation/0008_response.jpeg"))),
             http("request_9")

@@ -15,7 +15,7 @@ export const Gradient = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/img/orange.jpg');
+    background-image: url('/asw-junio/img/orange.jpg');
     filter: opacity(90%);
   }
 `;

@@ -25,7 +25,7 @@ export const WelcomePageContent = props => {
     <WelcomeWrapper data-testid="welcome-wrapper">
       <WelcomeCard className="card">
         <WelcomeLogo data-testid="welcome-logo">
-          <img src={process.env.PUBLIC_URL + '/asw-junio/img/mountain2.jpg'} alt="Viade" />
+          <img src={process.env.PUBLIC_URL + '/img/mountain2.jpg'} alt="Viade" />
         </WelcomeLogo>
         <WelcomeProfile data-testid="welcome-profile">
           <h3>

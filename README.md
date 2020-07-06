@@ -13,7 +13,7 @@ Enlace a la aplicación: https://eric-ao.github.io/asw-junio/
 
 Enlace a la documentación: https://eric-ao.github.io/asw-junio/docs/index.html
 
-Demostración en vídeo de la app: https://www.youtube.com/watch?v=ppsKlx8HeTw&feature=youtu.be
+Demostración en vídeo de la app: https://www.youtube.com/watch?v=G7StdMsJdDE&feature=youtu.be
 
 ## Características de la aplicación y mejoras.
 

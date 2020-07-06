@@ -20,7 +20,6 @@
 
 .rutas {
     display: flex;
-    position: relative;
 }
 
 .busqueda {
@@ -28,8 +27,15 @@
 }
 
 .botones {
-    margin-left: 55px;
-    margin-top: -250px;
+    margin-top: 50px;
+}
+
+.parteIzquierda {
+    display: flow;
+}
+
+.parteDerecha {
+    display: flow;
 }
 
 .dropdown {

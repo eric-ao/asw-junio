@@ -585,6 +585,7 @@ export class MapComponent extends Component {
                     {/* PARTE SUPERIOR DE LA PÁGINA DE MAPA */}
                     <div className="rutas">
                         {/* FORMULARIO PARA CREAR NUEVA RUTA */}
+                        <div className="parteIzq">
                         <div>{
                             this.state.url ? <>
                                     <form className="form">
@@ -600,11 +601,29 @@ export class MapComponent extends Component {
                                     </form>
                                 </> : <p>Cargando...</p>
                         } </div>
+                        <div className="botones">
+                            <button onClick={this.nueva} className="boton"> Nueva</button>
+                            {
+                                this.getLastRoute().locations.length > 0 ?
+                                    <button onClick={this.deletePoint} className="boton"> Borrar último punto</button> : null
+                            }
+                            {
+                                this.getLastRoute().locations.length > 0 ?
+                                    <button onClick={this.handleSave} className="boton"> Guardar ruta </button> : null
+                            }
+                            {
+                                this.state.selectedRoute.locations !== undefined && this.state.selectedRoute.locations.length !== 0 ?
+                                    <button onClick={this.handleDelete} className="boton"> Borrar ruta</button> : null
+                            }
+                            <button onClick={this.handleClear} className="boton"> Borrar todas mis rutas</button>
+                        </div>
+                        </div>
                         {/* FORMULARIO PARA CREAR NUEVA RUTA */}
 
 
 
                         {/* MUESTRA LAS RUTAS A LA DERECHA */}
+                        <div className="parteDerecha">
                         <dl>
                             <label className="etiqueta">Buscar</label>
                             <div >
@@ -616,30 +635,14 @@ export class MapComponent extends Component {
 
 
                         </dl>
+                        </div>
                         {/* MUESTRA LAS RUTAS A LA DERECHA */}
                     </div>
                     {/* PARTE SUPERIOR DE LA PÁGINA DE MAPA */}
 
 
 
-                    {/* PARTE INTERMEDIA DE LA PÁGINA DE MAPA */}
-                    <div className="botones">
-                        <button onClick={this.nueva} className="boton"> Nueva</button>
-                        {
-                            this.getLastRoute().locations.length > 0 ?
-                                <button onClick={this.deletePoint} className="boton"> Borrar último punto</button> : null
-                        }
-                        {
-                            this.getLastRoute().locations.length > 0 ?
-                            <button onClick={this.handleSave} className="boton"> Guardar ruta </button> : null
-                        }
-                        {
-                            this.state.selectedRoute.locations !== undefined && this.state.selectedRoute.locations.length !== 0 ?
-                            <button onClick={this.handleDelete} className="boton"> Borrar ruta</button> : null
-                        }
-                        <button onClick={this.handleClear} className="boton"> Borrar todas mis rutas</button>
-                    </div>
-                    {/* PARTE INTERMEDIA DE LA PÁGINA DE MAPA */}
+
                 </div>
 
                 {/* PARTE DEL MAPA */}

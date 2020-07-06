@@ -42,6 +42,14 @@ export default class AyudaComponent extends Component {
                     <video src="/asw-junio/img/VerRutas.mp4" controls width="500" height="400" className="video1"></video>
                 </div>
 
+                <h2>Búsqueda de rutas</h2>
+                <p>Se pueden buscar rutas, ya sea filtrando por nombre o por categoría (o ambas)</p>
+                <p>Aquí un pequeño video que muestra como:</p>
+
+                <div>
+                    <video src="/asw-junio/img/Busqueda.mp4" controls width="500" height="400" className="video1"></video>
+                </div>
+
                 <h2>Cómo compartir tus rutas con tus amigos</h2>
                 <p>Para compartir una ruta deberá ir a la pestaña rutas. Una vez ahi seleccionar la ruta la cual quiere compartir. Una vez seleccionada le aparecerá compartir ruta, pulse y le aparecerá un cuadro de texto indicando que se ha compartido correctamente </p>
 

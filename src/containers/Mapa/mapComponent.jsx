@@ -6,7 +6,7 @@ import ldflex from "@solid/query-ldflex";
 import {GoogleApiWrapper, InfoWindow, Map, Marker, Polyline} from "google-maps-react";
 import ImageComponent from '../Imagen/imagen.component';
 import './mapComponent.css';
-import {estiloCustomDia} from './mapComponent.style';
+import {estiloCustomDia, estiloCustomNoche} from './mapComponent.style';
 import Dropdown from 'react-dropdown'
 import 'react-dropdown/style.css'
 
@@ -579,7 +579,6 @@ export class MapComponent extends Component {
                     strokeWeight: 2,}}
             />;
 
-
         return (
             <div className="map-container">
                 <div className="parteSuperior">
@@ -590,13 +589,13 @@ export class MapComponent extends Component {
                             this.state.url ? <>
                                     <form className="form">
                                         <label className="etiqueta"> Nombre:
-                                            <input type="text" value={this.getLastRoute().nombre} onChange={this.handleChangeName}/>
+                                            <input type="text" id="inputNombre" value={this.getLastRoute().nombre} onChange={this.handleChangeName}/>
                                         </label>
                                         <label className="etiqueta">Descripción:
-                                            <input type="text" value={this.getLastRoute().descripcion} onChange={this.handleChangeDescription}/>
+                                            <input type="text" id="inputDescripcion" value={this.getLastRoute().descripcion} onChange={this.handleChangeDescription}/>
                                         </label>
                                         <label className="etiqueta"> Categoría:
-                                            <Dropdown options={categories} onChange={this.handleChangeCategory} value={this.getLastRoute().categoria} placeholder="Seleccione una..."/>
+                                            <Dropdown options={categories} id="inputCategoria" onChange={this.handleChangeCategory} value={this.getLastRoute().categoria} placeholder="Seleccione una..."/>
                                         </label>
                                     </form>
                                 </> : <p>Cargando...</p>
@@ -609,9 +608,9 @@ export class MapComponent extends Component {
                         <dl>
                             <label className="etiqueta">Buscar</label>
                             <div >
-                                <input className="elemB1" type="text" value={this.state.busqueda} onChange={this.handleSearchText}/>
+                                <input className="elemB1" id="textoB" type="text" value={this.state.busqueda} onChange={this.handleSearchText}/>
                                 <Dropdown  options={categoriesBusqueda} onChange={this.handleSearchCategory} value={this.state.categoriaBuscada} placeholder="Seleccione una..."/>
-                                <button className="botonB" onClick={this.handleSearch}> Buscar </button>
+                                <button className="botonB" id="botonB" onClick={this.handleSearch}> Buscar </button>
                             </div>
                             <div className="lista">{fragment}</div>
 

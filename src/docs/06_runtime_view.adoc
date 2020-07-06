@@ -28,3 +28,12 @@ Para ver la lista de amigos de un usuario, se introducirá en la aplicación el 
 
 image::Sequence diagram3.png[Diagrama de secuencia 3]
 
+=== Crear nueva ruta
+Para crear una nueva ruta se ira al mapa, se marcarán dos puntos (o más), y rellenamos el formulario de la nueva ruta con un nombre, descripción y categoría. Finalmente le damos a guardar ruta.
+
+image::Sequence diagram4.png[Diagrama de secuencia 4]
+
+=== Busca una ruta
+Para buscar una ruta el usuario ira al mapa, rellenara el formulario de búsqueda con nombre o categoría o ambas, y le dara al botón de Buscar.
+
+image::Sequence diagram5.png[Diagrama de secuencia 5]

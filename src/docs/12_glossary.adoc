@@ -12,4 +12,6 @@
 | React     | React es una biblioteca Javascript de código abierto diseñada para crear interfaces de usuario con el objetivo de facilitar el desarrollo de aplicaciones en una sola página.
 | Travis     | Es un servicio de integración continua que se utiliza para construir y probar proyectos de software alojados en GitHub.
 | Jest     | Es un marco de prueba de JavaScript mantenido por Facebook, con un enfoque en la simplicidad.
+| Cucumber | Herramienta de software que admite el desarrollo basado en el comportamiento. Central para el enfoque de Cucumber BDD es su analizador de lenguaje ordinario llamado Gherkin. Permite que los comportamientos de software esperados se especifiquen en un lenguaje lógico que los clientes puedan entender.
+| Docker | Proyecto de código abierto que automatiza el despliegue de aplicaciones dentro de contenedores de software, proporcionando una capa adicional de abstracción y automatización de virtualización de aplicaciones en múltiples sistemas operativos.
 |===

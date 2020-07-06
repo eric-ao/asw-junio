@@ -18,17 +18,17 @@ Para realizar el sistema se utilizará el framework React.
 
 .Funcionales
 * El sistema se basará en una arquitectura descentralizada para que los datos estén separados de la aplicación.
-* Los usuarios podrán visualizar las rutas en una mapa.
+* Los usuarios podrán crear sus propias rutas, añadiendoles una categoría y contenido multimedia en alguna de las escalas.
+* Los usuarios podrán visualizar sus rutas en una mapa.
 * Los usuarios podrán almacenar las rutas en sus propios pods.
-* Se permitirá al usuario compartir fotos, vídeos o otro tipo de ficheros con amigos, y podrá crear grupos con estos.
-* Un usuario podrá obtener notificaciones cuando otro usuario quiera compartir una ruta con él.
+* Los usuarios podrán compartir estas rutas con sus amigos.
+* Los usuarios podrán ver las rutas que sus amigos han compartido con él.
 
 
 .No Funcionales
 * Seguridad de la información de los usuarios usando datos descentralizados.
 * Sistema usable para todo tipo de usuarios.
 * El sistema debe ser capaz de operar adecuadamente con varias sesiones simultáneas.
-* El sistema debe ser compatible con otros sistemas de gestión de rutas.
 
 
 
